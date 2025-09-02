@@ -1,0 +1,2002 @@
+[
+  {
+    "word": "knife",
+    "definition": ["มีด"]
+  },
+  {
+    "word": "knock",
+    "definition": ["เคาะ", "กระแทก", "ตี"]
+  },
+  {
+    "word": "know",
+    "definition": ["รู้", "รู้จัก"]
+  },
+  {
+    "word": "knowledge",
+    "definition": ["ความรู้"]
+  },
+  {
+    "word": "known",
+    "definition": ["รู้จัก", "จำได้", "ทราบ (กริยาช่อง 3 ของ know)"]
+  },
+  {
+    "word": "lab",
+    "definition": ["ห้องทดลอง", "ห้องปฏิบัติการ"]
+  },
+  {
+    "word": "label",
+    "definition": ["ป้าย", "ฉลาก"]
+  },
+  {
+    "word": "laboratory",
+    "definition": ["ห้องทดลอง", "ห้องปฏิบัติการ"]
+  },
+  {
+    "word": "labour",
+    "definition": ["แรงงาน", "กรรมกร"]
+  },
+  {
+    "word": "lack",
+    "definition": ["ขาดแคลน", "ความขาดแคลน"]
+  },
+  {
+    "word": "lad",
+    "definition": ["เด็กหนุ่ม"]
+  },
+  {
+    "word": "ladder",
+    "definition": ["บันได (แบบพาด)"]
+  },
+  {
+    "word": "lady",
+    "definition": ["สุภาพสตรี"]
+  },
+  {
+    "word": "lake",
+    "definition": ["ทะเลสาบ"]
+  },
+  {
+    "word": "lamb",
+    "definition": ["ลูกแกะ", "เนื้อลูกแกะ"]
+  },
+  {
+    "word": "lamp",
+    "definition": ["ตะเกียง", "โคมไฟ"]
+  },
+  {
+    "word": "land",
+    "definition": ["พื้นที่", "แผ่นดิน", "ลงจอด"]
+  },
+  {
+    "word": "landlord",
+    "definition": ["เจ้าของบ้านเช่า (ชาย)"]
+  },
+  {
+    "word": "landscape",
+    "definition": ["ภาพภูมิประเทศ", "ภาพทิวทัศน์"]
+  },
+  {
+    "word": "lane",
+    "definition": ["ช่องทางเดินรถ", "ซอย"]
+  },
+  {
+    "word": "language",
+    "definition": ["ภาษา"]
+  },
+  {
+    "word": "large",
+    "definition": ["ใหญ่", "กว้าง"]
+  },
+  {
+    "word": "largely",
+    "definition": ["อย่างใหญ่โต", "โดยทั่วไป", "ส่วนใหญ่"]
+  },
+  {
+    "word": "last",
+    "definition": ["สุดท้าย", "คงอยู่", "ที่แล้ว"]
+  },
+  {
+    "word": "late",
+    "definition": ["สาย", "ดึก", "ตอนปลาย"]
+  },
+  {
+    "word": "later",
+    "definition": ["ในภายหลัง", "ต่อมา"]
+  },
+  {
+    "word": "latter",
+    "definition": ["ต่อมา", "ส่วนหลัง", "ระยะหลัง", "อย่างหลัง"]
+  },
+  {
+    "word": "laugh",
+    "definition": ["หัวเราะ"]
+  },
+  {
+    "word": "launch",
+    "definition": ["ปล่อย(จรวด,ขีปนาวุธ,ดาวเทียม)", "เริ่มปฏิบัติการ", "เปิดตัว"]
+  },
+  {
+    "word": "law",
+    "definition": ["กฎหมาย"]
+  },
+  {
+    "word": "lawyer",
+    "definition": ["ทนายความ"]
+  },
+  {
+    "word": "lay",
+    "definition": ["วาง", "ปู", "วางไข่"]
+  },
+  {
+    "word": "layer",
+    "definition": ["ชั้น", "ชั้นดิน", "สิ่งที่ซ้อนเป็นชั้น", "ระดับ"]
+  },
+  {
+    "word": "lazy",
+    "definition": ["ขี้เกียจ"]
+  },
+  {
+    "word": "lead",
+    "definition": ["นำ", "ชักจูง", "ตะกั่ว"]
+  },
+  {
+    "word": "leader",
+    "definition": ["ผู้นำ"]
+  },
+  {
+    "word": "leadership",
+    "definition": ["ภาวะผู้นำ"]
+  },
+  {
+    "word": "leading",
+    "definition": ["การเป็นผู้นำ", "ชั้นแนวหน้า"]
+  },
+  {
+    "word": "leaf",
+    "definition": ["ใบไม้"]
+  },
+  {
+    "word": "league",
+    "definition": ["สมาคม", "สันนิบาต", "ลีก (การแข่งขัน)"]
+  },
+  {
+    "word": "lean",
+    "definition": ["เอียง", "ลาด", "พิง", "เนื้อไม่มีมัน"]
+  },
+  {
+    "word": "learn",
+    "definition": ["เรียน", "เรียนรู้"]
+  },
+  {
+    "word": "least",
+    "definition": ["น้อยที่สุด"]
+  },
+  {
+    "word": "leather",
+    "definition": ["หนังฟอก", "เครื่องหนัง"]
+  },
+  {
+    "word": "leave",
+    "definition": ["ออกไป", "จากไป", "ทิ้งไว้", "การลาหยุด"]
+  },
+  {
+    "word": "lecture",
+    "definition": ["การบรรยาย", "คำบรรยาย"]
+  },
+  {
+    "word": "left",
+    "definition": ["ด้านซ้าย", "เลี้ยวซ้าย", "ที่เหลืออยู่"]
+  },
+  {
+    "word": "leg",
+    "definition": ["ขา"]
+  },
+  {
+    "word": "legal",
+    "definition": ["เกี่ยวกับกฎหมาย", "ถูกกฎหมาย"]
+  },
+  {
+    "word": "legislation",
+    "definition": ["กฎหมาย", "การออกกฎหมาย"]
+  },
+  {
+    "word": "leisure",
+    "definition": ["เวลาว่าง"]
+  },
+  {
+    "word": "lend",
+    "definition": ["ให้ยืม"]
+  },
+  {
+    "word": "length",
+    "definition": ["ความยาว"]
+  },
+  {
+    "word": "less",
+    "definition": ["น้อยกว่า", "เล็กน้อย"]
+  },
+  {
+    "word": "lesson",
+    "definition": ["บทเรียน"]
+  },
+  {
+    "word": "let",
+    "definition": ["ให้ทำ", "อนุญาตให้", "ปล่อย"]
+  },
+  {
+    "word": "letter",
+    "definition": ["ตัวอักษร", "จดหมาย"]
+  },
+  {
+    "word": "level",
+    "definition": ["แนวราบ", "ระดับ", "ชั้น", "ทำให้เรียบ"]
+  },
+  {
+    "word": "liberal",
+    "definition": ["นิยมลัทธิเสรีนิยม", "ใจกว้าง"]
+  },
+  {
+    "word": "library",
+    "definition": ["ห้องสมุด"]
+  },
+  {
+    "word": "licence",
+    "definition": ["ใบอนุญาต", "ใบอนุญาตขับขี่"]
+  },
+  {
+    "word": "lick",
+    "definition": ["เลีย"]
+  },
+  {
+    "word": "lid",
+    "definition": ["ฝา", "ฝาปิดภาชนะ", "หนังตา"]
+  },
+  {
+    "word": "lie",
+    "definition": ["พูดโกหก", "นอนลง", "การโกหก"]
+  },
+  {
+    "word": "life",
+    "definition": ["ชีวิต"]
+  },
+  {
+    "word": "lift",
+    "definition": ["ยกขึ้น", "ลิฟต์ (ในอังกฤษ)"]
+  },
+  {
+    "word": "light",
+    "definition": ["แสง", "แสงสว่าง", "ความสว่าง", "เบา", "เปิดไฟ"]
+  },
+  {
+    "word": "lighting",
+    "definition": ["การจัดแสง", "การส่องแสงสว่าง"]
+  },
+  {
+    "word": "like",
+    "definition": ["ชอบ", "เหมือน", "เช่น"]
+  },
+  {
+    "word": "likely",
+    "definition": ["มีทีท่าว่า", "น่าจะ"]
+  },
+  {
+    "word": "limit",
+    "definition": ["ขอบเขต", "ขีดจำกัด", "จำกัด"]
+  },
+  {
+    "word": "limitation",
+    "definition": ["ขีดจำกัด", "การจำกัด", "ข้อจำกัด"]
+  },
+  {
+    "word": "limited",
+    "definition": ["ที่ถูกจำกัด", "ที่มีขอบเขต"]
+  },
+  {
+    "word": "line",
+    "definition": ["เส้น", "แถว", "สาย (โทรศัพท์)"]
+  },
+  {
+    "word": "link",
+    "definition": ["จุดเชื่อมโยง", "สิ่งเชื่อมโยง", "การเชื่อมต่อ"]
+  },
+  {
+    "word": "lip",
+    "definition": ["ริมฝีปาก"]
+  },
+  {
+    "word": "liquid",
+    "definition": ["เป็นของเหลว", "ของเหลว"]
+  },
+  {
+    "word": "list",
+    "definition": ["รายการ", "ทำรายการ"]
+  },
+  {
+    "word": "listen",
+    "definition": ["ฟัง"]
+  },
+  {
+    "word": "literally",
+    "definition": ["อย่างตามตัวอักษร", "อย่างแท้จริง"]
+  },
+  {
+    "word": "literary",
+    "definition": ["เกี่ยวกับวรรณคดี", "เกี่ยวกับการประพันธ์"]
+  },
+  {
+    "word": "literature",
+    "definition": ["วรรณคดี", "การประพันธ์", "การเขียนหนังสือ"]
+  },
+  {
+    "word": "little",
+    "definition": ["เล็ก", "น้อย"]
+  },
+  {
+    "word": "live",
+    "definition": ["มีชีวิตอยู่", "อาศัยอยู่", "ถ่ายทอดสด"]
+  },
+  {
+    "word": "lively",
+    "definition": ["มีชีวิตชีวา", "ร่าเริง"]
+  },
+  {
+    "word": "living",
+    "definition": ["สิ่งมีชีวิต", "การครองชีพ", "ค่าครองชีพ"]
+  },
+  {
+    "word": "load",
+    "definition": ["บรรทุก", "ภาระ", "ของที่บรรทุก"]
+  },
+  {
+    "word": "loan",
+    "definition": ["การให้ยืม", "เงินกู้"]
+  },
+  {
+    "word": "local",
+    "definition": ["ท้องถิ่น", "เฉพาะที่"]
+  },
+  {
+    "word": "locate",
+    "definition": ["หาที่ตั้ง", "ตั้งอยู่"]
+  },
+  {
+    "word": "location",
+    "definition": ["ตำแหน่งที่ตั้ง"]
+  },
+  {
+    "word": "lock",
+    "definition": ["กอดรัด", "ปิดตาย", "กุญแจ", "ล็อค"]
+  },
+  {
+    "word": "log",
+    "definition": ["ท่อนไม้", "บันทึกข้อมูล"]
+  },
+  {
+    "word": "logical",
+    "definition": ["มีเหตุผล", "สมเหตุสมผล"]
+  },
+  {
+    "word": "lonely",
+    "definition": ["โดดเดี่ยว", "ไร้เพื่อน", "เหงา"]
+  },
+  {
+    "word": "long",
+    "definition": ["ยาว", "นาน"]
+  },
+  {
+    "word": "long-term",
+    "definition": ["ระยะยาว", "ที่มีมานาน"]
+  },
+  {
+    "word": "look",
+    "definition": ["มอง", "ดูเหมือน", "ท่าทาง"]
+  },
+  {
+    "word": "loose",
+    "definition": ["หลวม", "ไม่แน่น"]
+  },
+  {
+    "word": "lord",
+    "definition": ["ท่านลอร์ด", "เจ้าผู้ครองนคร", "พระเจ้า"]
+  },
+  {
+    "word": "lorry",
+    "definition": ["รถบรรทุก"]
+  },
+  {
+    "word": "lose",
+    "definition": ["แพ้", "ทำหาย", "สูญเสีย"]
+  },
+  {
+    "word": "loss",
+    "definition": ["การสูญเสีย", "การขาดทุน"]
+  },
+  {
+    "word": "lost",
+    "definition": ["สูญหายไป", "เสียไป", "หลงทาง"]
+  },
+  {
+    "word": "lot",
+    "definition": ["มาก (จำนวน, ปริมาณ, ระดับ)", "บ่อยครั้ง", "ที่ดิน"]
+  },
+  {
+    "word": "loud",
+    "definition": ["เสียงดัง"]
+  },
+  {
+    "word": "lounge",
+    "definition": ["เดินทอดน่อง", "ห้องนั่งเล่นในโรงแรม", "ห้องรับรอง"]
+  },
+  {
+    "word": "love",
+    "definition": ["รัก", "ความรัก"]
+  },
+  {
+    "word": "lovely",
+    "definition": ["สวยงาม", "น่ารัก"]
+  },
+  {
+    "word": "lover",
+    "definition": ["คู่รัก", "คนรัก", "ชู้รัก"]
+  },
+  {
+    "word": "low",
+    "definition": ["ต่ำ"]
+  },
+  {
+    "word": "lower",
+    "definition": ["ต่ำกว่า", "ลดลง"]
+  },
+  {
+    "word": "luck",
+    "definition": ["โชคดี", "เคราะห์ดี", "โชค"]
+  },
+  {
+    "word": "luckily",
+    "definition": ["โดยโชคดี", "อย่างเฮง"]
+  },
+  {
+    "word": "lucky",
+    "definition": ["โชคดี", "มีโชค", "นำโชค"]
+  },
+  {
+    "word": "lump",
+    "definition": ["เป็นก้อน", "รอยปูด", "ก้อน"]
+  },
+  {
+    "word": "lunch",
+    "definition": ["อาหารกลางวัน"]
+  },
+  {
+    "word": "lunchtime",
+    "definition": ["พักกลางวัน"]
+  },
+  {
+    "word": "machine",
+    "definition": ["เครื่องจักร"]
+  },
+  {
+    "word": "machinery",
+    "definition": ["เครื่องจักร", "เครื่องกล"]
+  },
+  {
+    "word": "mad",
+    "definition": ["บ้า", "โกรธ"]
+  },
+  {
+    "word": "madam",
+    "definition": ["คุณผู้หญิง"]
+  },
+  {
+    "word": "magazine",
+    "definition": ["นิตยสาร", "คลังกระสุน"]
+  },
+  {
+    "word": "magic",
+    "definition": ["เวทมนตร์", "การเล่นกล"]
+  },
+  {
+    "word": "mail",
+    "definition": ["ไปรษณีย์", "ส่งทางไปรษณีย์", "อีเมล"]
+  },
+  {
+    "word": "main",
+    "definition": ["สำคัญ", "หลัก"]
+  },
+  {
+    "word": "mainly",
+    "definition": ["ส่วนใหญ่", "หลักๆ"]
+  },
+  {
+    "word": "maintain",
+    "definition": ["รักษา", "บำรุง", "ยืนกราน"]
+  },
+  {
+    "word": "maintenance",
+    "definition": ["การดูแลรักษา", "การบำรุงรักษา"]
+  },
+  {
+    "word": "major",
+    "definition": ["ส่วนใหญ่", "สำคัญ", "พันตรี", "วิชาเอก"]
+  },
+  {
+    "word": "majority",
+    "definition": ["ส่วนใหญ่", "คะแนนเสียงข้างมาก"]
+  },
+  {
+    "word": "make",
+    "definition": ["ทำ", "สร้าง"]
+  },
+  {
+    "word": "male",
+    "definition": ["เพศชาย", "ผู้ชาย"]
+  },
+  {
+    "word": "mall",
+    "definition": ["ห้างสรรพสินค้า"]
+  },
+  {
+    "word": "man",
+    "definition": ["ผู้ชาย", "มนุษย์"]
+  },
+  {
+    "word": "manage",
+    "definition": ["จัดการ", "บริหาร", "ทำสำเร็จ"]
+  },
+  {
+    "word": "management",
+    "definition": ["การจัดการ"]
+  },
+  {
+    "word": "manager",
+    "definition": ["ผู้จัดการ"]
+  },
+  {
+    "word": "manner",
+    "definition": ["กริยาอาการ", "มารยาท", "ลักษณะ"]
+  },
+  {
+    "word": "manufacturer",
+    "definition": ["ผู้ผลิต", "บริษัทผู้ผลิต"]
+  },
+  {
+    "word": "manufacturing",
+    "definition": ["อุตสาหกรรมการผลิต", "การผลิต"]
+  },
+  {
+    "word": "many",
+    "definition": ["มากมาย"]
+  },
+  {
+    "word": "map",
+    "definition": ["แผนที่"]
+  },
+  {
+    "word": "march",
+    "definition": ["เดินแถว", "เดือนมีนาคม"]
+  },
+  {
+    "word": "margin",
+    "definition": ["ริม", "ขอบ", "ส่วนต่าง"]
+  },
+  {
+    "word": "mark",
+    "definition": ["เครื่องหมาย", "รอยแผลเป็น", "คะแนน", "ทำเครื่องหมาย"]
+  },
+  {
+    "word": "market",
+    "definition": ["ตลาด"]
+  },
+  {
+    "word": "marketing",
+    "definition": ["การตลาด", "การซื้อขายสินค้าหรือบริการ"]
+  },
+  {
+    "word": "marriage",
+    "definition": ["การแต่งงาน"]
+  },
+  {
+    "word": "married",
+    "definition": ["แต่งงานแล้ว"]
+  },
+  {
+    "word": "marry",
+    "definition": ["แต่งงาน", "สมรส"]
+  },
+  {
+    "word": "marvellous",
+    "definition": ["น่าพิศวง", "น่าอัศจรรย์", "ยอดเยี่ยม"]
+  },
+  {
+    "word": "mass",
+    "definition": ["ปริมาณมาก", "ส่วนใหญ่", "มวล", "พิธีมิสซา"]
+  },
+  {
+    "word": "massive",
+    "definition": ["ใหญ่โต", "มโหฬาร"]
+  },
+  {
+    "word": "master",
+    "definition": ["นาย", "เจ้านาย", "ผู้สำเร็จปริญญาโท", "เชี่ยวชาญ"]
+  },
+  {
+    "word": "match",
+    "definition": ["เข้ากัน", "เท่ากัน", "การแข่งขัน", "ไม้ขีดไฟ"]
+  },
+  {
+    "word": "mate",
+    "definition": ["เพื่อน", "เพื่อนร่วมงาน", "คู่ (สัตว์)"]
+  },
+  {
+    "word": "material",
+    "definition": ["วัตถุดิบ", "ส่วนประกอบ", "เนื้อหา", "วัสดุ"]
+  },
+  {
+    "word": "math",
+    "definition": ["คณิตศาสตร์"]
+  },
+  {
+    "word": "maths",
+    "definition": ["คณิตศาสตร์"]
+  },
+  {
+    "word": "matter",
+    "definition": ["สิ่งที่ต้องทำ", "ภารกิจ", "สาร", "เรื่อง", "สสาร"]
+  },
+  {
+    "word": "maximum",
+    "definition": ["จำนวนที่มากที่สุด", "ค่าสูงสุด"]
+  },
+  {
+    "word": "may",
+    "definition": ["อาจจะ", "เดือนพฤษภาคม"]
+  },
+  {
+    "word": "maybe",
+    "definition": ["บางที", "อาจจะ", "เป็นไปได้"]
+  },
+  {
+    "word": "me",
+    "definition": ["ฉัน (รูปกรรมของ I)"]
+  },
+  {
+    "word": "meal",
+    "definition": ["มื้ออาหาร"]
+  },
+  {
+    "word": "mean",
+    "definition": ["หมายถึง", "หมายความว่า", "ใจร้าย", "ค่าเฉลี่ย"]
+  },
+  {
+    "word": "meaning",
+    "definition": ["ความหมาย"]
+  },
+  {
+    "word": "means",
+    "definition": ["วิธี", "วิธีการ", "ฐานะการเงิน"]
+  },
+  {
+    "word": "meanwhile",
+    "definition": ["เวลาในระหว่างนั้น", "ในระหว่างนั้น"]
+  },
+  {
+    "word": "measure",
+    "definition": ["หน่วยวัด", "เครื่องวัด", "วัด", "มาตรการ"]
+  },
+  {
+    "word": "measurement",
+    "definition": ["การวัด", "ขนาด"]
+  },
+  {
+    "word": "meat",
+    "definition": ["เนื้อสัตว์"]
+  },
+  {
+    "word": "mechanism",
+    "definition": ["ส่วนประกอบของเครื่องจักร", "กลไก"]
+  },
+  {
+    "word": "media",
+    "definition": ["สื่อมวลชน", "สื่อบันทึก"]
+  },
+  {
+    "word": "medical",
+    "definition": ["ทางการแพทย์"]
+  },
+  {
+    "word": "medicine",
+    "definition": ["ยา", "แพทยศาสตร์"]
+  },
+  {
+    "word": "medieval",
+    "definition": ["เกี่ยวกับยุคกลาง", "สมัยเก่า", "ล้าสมัย"]
+  },
+  {
+    "word": "medium",
+    "definition": ["ปานกลาง", "สื่อกลาง", "ตัวกลาง"]
+  },
+  {
+    "word": "meet",
+    "definition": ["พบ", "เจอ", "ประชุม"]
+  },
+  {
+    "word": "meeting",
+    "definition": ["การประชุม"]
+  },
+  {
+    "word": "member",
+    "definition": ["สมาชิก"]
+  },
+  {
+    "word": "membership",
+    "definition": ["สมาชิกภาพ", "การเป็นสมาชิก"]
+  },
+  {
+    "word": "memory",
+    "definition": ["ความจำ", "หน่วยความจำ"]
+  },
+  {
+    "word": "mental",
+    "definition": ["เกี่ยวกับจิตใจ"]
+  },
+  {
+    "word": "mention",
+    "definition": ["พูดถึง", "กล่าวถึง"]
+  },
+  {
+    "word": "menu",
+    "definition": ["รายการอาหาร", "รายการเลือก"]
+  },
+  {
+    "word": "mere",
+    "definition": ["เพียงเท่านั้น", "แค่"]
+  },
+  {
+    "word": "merely",
+    "definition": ["เพียงเท่านั้น", "อย่างง่ายๆ"]
+  },
+  {
+    "word": "mess",
+    "definition": ["สภาพรกรุงรัง", "ความยุ่งเหยิง"]
+  },
+  {
+    "word": "message",
+    "definition": ["ข้อความ", "ข่าวสาร"]
+  },
+  {
+    "word": "messy",
+    "definition": ["รุงรัง", "เลอะ"]
+  },
+  {
+    "word": "metal",
+    "definition": ["โลหะ"]
+  },
+  {
+    "word": "method",
+    "definition": ["วิธีการ", "วิธีดำเนินการ", "วิธี", "ระเบียบ", "แบบแผน"]
+  },
+  {
+    "word": "metre",
+    "definition": ["เมตร"]
+  },
+  {
+    "word": "middle",
+    "definition": ["ตรงกลาง", "ปานกลาง"]
+  },
+  {
+    "word": "midnight",
+    "definition": ["เที่ยงคืน"]
+  },
+  {
+    "word": "might",
+    "definition": ["อาจจะ (กริยาช่องที่ 2 ของ may)", "พละกำลัง"]
+  },
+  {
+    "word": "mile",
+    "definition": ["ไมล์"]
+  },
+  {
+    "word": "military",
+    "definition": ["เกี่ยวกับทหาร", "การทหาร", "กองทัพ"]
+  },
+  {
+    "word": "milk",
+    "definition": ["นม"]
+  },
+  {
+    "word": "millimetre",
+    "definition": ["มิลลิเมตร"]
+  },
+  {
+    "word": "mind",
+    "definition": ["จิตใจ", "รังเกียจ", "ใส่ใจ"]
+  },
+  {
+    "word": "mine",
+    "definition": ["ของฉัน", "เหมืองแร่", "ทุ่นระเบิด"]
+  },
+  {
+    "word": "mineral",
+    "definition": ["แร่", "แร่ธาตุ"]
+  },
+  {
+    "word": "minimum",
+    "definition": ["ขั้นต่ำ", "ค่าน้อยที่สุด"]
+  },
+  {
+    "word": "minister",
+    "definition": ["รัฐมนตรี", "นักบวช"]
+  },
+  {
+    "word": "ministry",
+    "definition": ["กระทรวง"]
+  },
+  {
+    "word": "minor",
+    "definition": ["เป็นวิชารอง", "ผู้เยาว์", "เล็กน้อย"]
+  },
+  {
+    "word": "minority",
+    "definition": ["คนกลุ่มน้อย", "คะแนนเสียงข้างน้อย"]
+  },
+  {
+    "word": "minute",
+    "definition": ["นาที", "เล็กมาก"]
+  },
+  {
+    "word": "mirror",
+    "definition": ["กระจก", "สะท้อน"]
+  },
+  {
+    "word": "misery",
+    "definition": ["ความทุกข์ยาก", "น่าสังเวช"]
+  },
+  {
+    "word": "miss",
+    "definition": ["พลาด", "คิดถึง", "นางสาว"]
+  },
+  {
+    "word": "mission",
+    "definition": ["งานที่ได้รับมอบหมาย", "คณะผู้แทน", "ภารกิจ"]
+  },
+  {
+    "word": "mistake",
+    "definition": ["ความผิดพลาด", "ทำผิด"]
+  },
+  {
+    "word": "mix",
+    "definition": ["ผสม", "ส่วนผสม"]
+  },
+  {
+    "word": "mixed",
+    "definition": ["ปนกัน", "ผสมผสาน", "ยุ่งเหยิง"]
+  },
+  {
+    "word": "mixture",
+    "definition": ["การผสม", "ส่วนผสม"]
+  },
+  {
+    "word": "mobile",
+    "definition": ["ซึ่งเคลื่อนที่ได้", "เคลื่อนไหวได้"]
+  },
+  {
+    "word": "mobile phone",
+    "definition": ["โทรศัพท์มือถือ", "โทรศัพท์เคลื่อนที่"]
+  },
+  {
+    "word": "mode",
+    "definition": ["ฐานนิยม", "รูปแบบ", "โหมด"]
+  },
+  {
+    "word": "model",
+    "definition": ["รูปแบบจำลอง", "นางแบบ/นายแบบ", "ต้นแบบ"]
+  },
+  {
+    "word": "modern",
+    "definition": ["ทันสมัย"]
+  },
+  {
+    "word": "mom",
+    "definition": ["แม่ (ภาษาพูด)"]
+  },
+  {
+    "word": "moment",
+    "definition": ["ขณะนั้น", "ชั่วครู่"]
+  },
+  {
+    "word": "mommy",
+    "definition": ["แม่ (ไม่เป็นทางการ)"]
+  },
+  {
+    "word": "money",
+    "definition": ["เงิน"]
+  },
+  {
+    "word": "monitor",
+    "definition": ["เฝ้าดู", "จับตา", "จอแสดงผล"]
+  },
+  {
+    "word": "month",
+    "definition": ["เดือน"]
+  },
+  {
+    "word": "mood",
+    "definition": ["อารมณ์"]
+  },
+  {
+    "word": "moon",
+    "definition": ["ดวงจันทร์"]
+  },
+  {
+    "word": "moral",
+    "definition": ["ศีลธรรม", "คุณธรรม"]
+  },
+  {
+    "word": "more",
+    "definition": ["มากกว่า"]
+  },
+  {
+    "word": "moreover",
+    "definition": ["นอกจากนั้น", "ยิ่งกว่านั้น"]
+  },
+  {
+    "word": "morning",
+    "definition": ["เวลาเช้า", "ตอนเช้า"]
+  },
+  {
+    "word": "mortgage",
+    "definition": ["จำนอง", "การจำนอง"]
+  },
+  {
+    "word": "most",
+    "definition": ["มากที่สุด", "ส่วนใหญ่"]
+  },
+  {
+    "word": "mostly",
+    "definition": ["ส่วนมาก", "ส่วนใหญ่", "โดยทั่วไป"]
+  },
+  {
+    "word": "mother",
+    "definition": ["แม่"]
+  },
+  {
+    "word": "motion",
+    "definition": ["การเคลื่อนไหวหรือการเคลื่อนที่", "การเคลื่อนไหว", "ญัตติ"]
+  },
+  {
+    "word": "motor",
+    "definition": ["เครื่องยนต์", "มอเตอร์"]
+  },
+  {
+    "word": "motorway",
+    "definition": ["ทางด่วน", "ทางหลวงพิเศษ"]
+  },
+  {
+    "word": "mountain",
+    "definition": ["ภูเขา"]
+  },
+  {
+    "word": "mouse",
+    "definition": ["หนู", "เมาส์ (คอมพิวเตอร์)"]
+  },
+  {
+    "word": "mouth",
+    "definition": ["ปาก"]
+  },
+  {
+    "word": "move",
+    "definition": ["เคลื่อนย้าย", "ย้ายบ้าน", "ทำให้สะเทือนใจ"]
+  },
+  {
+    "word": "movement",
+    "definition": ["การเคลื่อนไหว", "ขบวนการ"]
+  },
+  {
+    "word": "movie",
+    "definition": ["ภาพยนตร์"]
+  },
+  {
+    "word": "much",
+    "definition": ["มาก"]
+  },
+  {
+    "word": "mud",
+    "definition": ["โคลน", "เลน"]
+  },
+  {
+    "word": "mum",
+    "definition": ["แม่ (ภาษาพูด)"]
+  },
+  {
+    "word": "mummy",
+    "definition": ["แม่", "มัมมี่"]
+  },
+  {
+    "word": "murder",
+    "definition": ["ฆาตกรรม", "ฆ่า"]
+  },
+  {
+    "word": "muscle",
+    "definition": ["กล้ามเนื้อ"]
+  },
+  {
+    "word": "museum",
+    "definition": ["พิพิธภัณฑ์"]
+  },
+  {
+    "word": "mushroom",
+    "definition": ["เห็ด"]
+  },
+  {
+    "word": "music",
+    "definition": ["ดนตรี"]
+  },
+  {
+    "word": "musical",
+    "definition": ["เกี่ยวกับดนตรี", "ละครเพลง"]
+  },
+  {
+    "word": "must",
+    "definition": ["ต้อง"]
+  },
+  {
+    "word": "my",
+    "definition": ["ของฉัน"]
+  },
+  {
+    "word": "myself",
+    "definition": ["ตัวของฉัน"]
+  },
+  {
+    "word": "mystery",
+    "definition": ["ความลึกลับ", "สิ่งที่อธิบายไม่ได้", "เรื่องลึกลับ"]
+  },
+  {
+    "word": "nail",
+    "definition": ["ตะปู", "เล็บ"]
+  },
+  {
+    "word": "naked",
+    "definition": ["เปลือย", "ล่อนจ้อน"]
+  },
+  {
+    "word": "name",
+    "definition": ["ชื่อ", "ตั้งชื่อ"]
+  },
+  {
+    "word": "narrow",
+    "definition": ["แคบ"]
+  },
+  {
+    "word": "nasty",
+    "definition": ["น่ารังเกียจ", "น่าชัง", "ร้ายกาจ"]
+  },
+  {
+    "word": "nation",
+    "definition": ["ชาติ", "ประเทศ"]
+  },
+  {
+    "word": "national",
+    "definition": ["แห่งชาติ", "เพื่อชาติ"]
+  },
+  {
+    "word": "native",
+    "definition": ["โดยกำเนิด", "แต่กำเนิด", "ชนพื้นเมือง"]
+  },
+  {
+    "word": "natural",
+    "definition": ["โดยธรรมชาติ", "เป็นธรรมชาติ"]
+  },
+  {
+    "word": "naturally",
+    "definition": ["แบบธรรมชาติ", "อย่างธรรมชาติ", "แน่นอน"]
+  },
+  {
+    "word": "nature",
+    "definition": ["ธรรมชาติ", "นิสัย"]
+  },
+  {
+    "word": "naughty",
+    "definition": ["ซุกซน", "ดื้อ"]
+  },
+  {
+    "word": "near",
+    "definition": ["ใกล้"]
+  },
+  {
+    "word": "nearby",
+    "definition": ["ใกล้ๆกัน", "ถัดไป"]
+  },
+  {
+    "word": "nearly",
+    "definition": ["เกือบ"]
+  },
+  {
+    "word": "neat",
+    "definition": ["เป็นระเบียบ", "สะอาด", "เรียบร้อย"]
+  },
+  {
+    "word": "necessarily",
+    "definition": ["โดยความจำเป็น", "แน่แท้", "อย่างจำเป็น"]
+  },
+  {
+    "word": "necessary",
+    "definition": ["จำเป็น"]
+  },
+  {
+    "word": "neck",
+    "definition": ["คอ"]
+  },
+  {
+    "word": "need",
+    "definition": ["จำเป็น", "ต้องการ", "ความต้องการ"]
+  },
+  {
+    "word": "negative",
+    "definition": ["คำปฏิเสธ", "การคัดค้าน", "เชิงลบ"]
+  },
+  {
+    "word": "negotiate",
+    "definition": ["เจรจาต่อรอง"]
+  },
+  {
+    "word": "negotiation",
+    "definition": ["การเจรจาต่อรอง"]
+  },
+  {
+    "word": "neighbour",
+    "definition": ["เพื่อนบ้าน"]
+  },
+  {
+    "word": "neighbourhood",
+    "definition": ["ย่านใกล้เคียง", "ละแวกบ้าน"]
+  },
+  {
+    "word": "neither",
+    "definition": ["ไม่ทั้งสอง"]
+  },
+  {
+    "word": "nerve",
+    "definition": ["เส้นประสาท", "ความกล้า"]
+  },
+  {
+    "word": "nervous",
+    "definition": ["กังวลใจ", "ประหม่า", "เกี่ยวกับประสาท"]
+  },
+  {
+    "word": "net",
+    "definition": ["ตาข่าย", "สุทธิ"]
+  },
+  {
+    "word": "network",
+    "definition": ["เครือข่ายงาน", "เครือข่าย"]
+  },
+  {
+    "word": "never",
+    "definition": ["ไม่เคย"]
+  },
+  {
+    "word": "nevertheless",
+    "definition": ["ถึงแม้ว่าจะเป็นเช่นนั้นก็ตาม", "อย่างไรก็ตาม"]
+  },
+  {
+    "word": "new",
+    "definition": ["ใหม่"]
+  },
+  {
+    "word": "newly",
+    "definition": ["สดๆ ร้อนๆ", "เมื่อเร็ว ๆ นี้", "ใหม่"]
+  },
+  {
+    "word": "news",
+    "definition": ["ข่าว"]
+  },
+  {
+    "word": "newspaper",
+    "definition": ["หนังสือพิมพ์"]
+  },
+  {
+    "word": "next",
+    "definition": ["ถัดไป", "ต่อไป"]
+  },
+  {
+    "word": "nice",
+    "definition": ["ดี", "สุภาพ", "มีมิตรไมตรี"]
+  },
+  {
+    "word": "nicely",
+    "definition": ["อย่างดี", "อย่างสุภาพ"]
+  },
+  {
+    "word": "night",
+    "definition": ["กลางคืน"]
+  },
+  {
+    "word": "nil",
+    "definition": ["จำนวนศูนย์", "การไม่มีอะไร"]
+  },
+  {
+    "word": "no",
+    "definition": ["ไม่"]
+  },
+  {
+    "word": "no one",
+    "definition": ["ไม่มีใคร"]
+  },
+  {
+    "word": "no way",
+    "definition": ["ไม่มีทาง"]
+  },
+  {
+    "word": "nobody",
+    "definition": ["ไม่มีใคร"]
+  },
+  {
+    "word": "nod",
+    "definition": ["พยักหน้ารับ", "สัปหงก"]
+  },
+  {
+    "word": "noise",
+    "definition": ["เสียงรบกวน", "เสียงดัง"]
+  },
+  {
+    "word": "noisy",
+    "definition": ["อึกทึก", "เสียงดัง"]
+  },
+  {
+    "word": "none",
+    "definition": ["ไม่มีสักสิ่ง", "ไม่มีเลย"]
+  },
+  {
+    "word": "nonsense",
+    "definition": ["เรื่องไร้สาระ", "เรื่องเหลวไหล"]
+  },
+  {
+    "word": "nope",
+    "definition": ["ไม่ (คำไม่เป็นทางการ)"]
+  },
+  {
+    "word": "nor",
+    "definition": ["ไม่ (มักใช้คู่กับ neither)"]
+  },
+  {
+    "word": "normal",
+    "definition": ["ปกติ", "ธรรมดา"]
+  },
+  {
+    "word": "normally",
+    "definition": ["ตามธรรมดา", "โดยทั่วไป"]
+  },
+  {
+    "word": "north",
+    "definition": ["ทิศเหนือ"]
+  },
+  {
+    "word": "northern",
+    "definition": ["เกี่ยวกับทางทิศเหนือหรือภาคเหนือ"]
+  },
+  {
+    "word": "nose",
+    "definition": ["จมูก"]
+  },
+  {
+    "word": "not",
+    "definition": ["ไม่"]
+  },
+  {
+    "word": "notably",
+    "definition": ["อย่างเด่นชัด", "โดยเฉพาะอย่างยิ่ง"]
+  },
+  {
+    "word": "note",
+    "definition": ["จด", "บันทึก", "ข้อความสั้นๆ", "ธนบัตร", "โน้ตดนตรี"]
+  },
+  {
+    "word": "nothing",
+    "definition": ["ไม่มีอะไร"]
+  },
+  {
+    "word": "notice",
+    "definition": ["ประกาศ", "แจ้ง", "สังเกตเห็น"]
+  },
+  {
+    "word": "notion",
+    "definition": ["ความคิด", "ความเชื่อ"]
+  },
+  {
+    "word": "novel",
+    "definition": ["นวนิยาย", "ใหม่"]
+  },
+  {
+    "word": "now",
+    "definition": ["เดี๋ยวนี้", "ตอนนี้"]
+  },
+  {
+    "word": "nowadays",
+    "definition": ["ในปัจจุบัน"]
+  },
+  {
+    "word": "nowhere",
+    "definition": ["ไม่มีที่ไหน"]
+  },
+  {
+    "word": "nuclear",
+    "definition": ["เกี่ยวกับนิวเคลียร์"]
+  },
+  {
+    "word": "nuisance",
+    "definition": ["การรบกวน", "เหตุรำคาญ", "สิ่งที่น่ารำคาญ"]
+  },
+  {
+    "word": "number",
+    "definition": ["ตัวเลข", "จำนวน", "หมายเลข"]
+  },
+  {
+    "word": "numerous",
+    "definition": ["มีมากมาย", "เพียบ", "เยอะแยะ"]
+  },
+  {
+    "word": "nurse",
+    "definition": ["พยาบาล", "ดูแล"]
+  },
+  {
+    "word": "nut",
+    "definition": ["ถั่ว", "แหวนสกรู", "คนบ้า"]
+  },
+  {
+    "word": "o’clock",
+    "definition": ["นาฬิกา (ใช้กับชั่วโมงเต็ม)"]
+  },
+  {
+    "word": "object",
+    "definition": ["วัตถุ", "สิ่งของ", "เป้าหมาย", "คัดค้าน"]
+  },
+  {
+    "word": "objection",
+    "definition": ["การคัดค้าน", "คำคัดค้าน", "การท้วงติง"]
+  },
+  {
+    "word": "objective",
+    "definition": ["เป้าหมาย", "วัตถุประสงค์", "ที่ไม่ลำเอียง"]
+  },
+  {
+    "word": "obligation",
+    "definition": ["ภาระหน้าที่", "ภาระผูกพัน", "พันธะ"]
+  },
+  {
+    "word": "observation",
+    "definition": ["การสังเกตการณ์", "การสังเกต"]
+  },
+  {
+    "word": "observe",
+    "definition": ["สังเกต", "ปฏิบัติตาม"]
+  },
+  {
+    "word": "obtain",
+    "definition": ["ได้รับ", "ได้มา"]
+  },
+  {
+    "word": "obvious",
+    "definition": ["ชัดเจน", "เด่นชัด", "เข้าใจได้ง่าย"]
+  },
+  {
+    "word": "obviously",
+    "definition": ["อย่างเห็นชัด", "อย่างเด่นชัด"]
+  },
+  {
+    "word": "occasion",
+    "definition": ["โอกาส", "จังหวะ", "วาระ"]
+  },
+  {
+    "word": "occasional",
+    "definition": ["บางโอกาส", "เป็นครั้งคราว"]
+  },
+  {
+    "word": "occasionally",
+    "definition": ["บางครั้งบางคราว", "ตามโอกาส"]
+  },
+  {
+    "word": "occupation",
+    "definition": ["อาชีพ", "การยึดครอง"]
+  },
+  {
+    "word": "occupy",
+    "definition": ["เข้ายึด", "ครอบครอง", "อาศัยอยู่"]
+  },
+  {
+    "word": "occur",
+    "definition": ["เกิดขึ้น", "ปรากฏขึ้น"]
+  },
+  {
+    "word": "ocean",
+    "definition": ["มหาสมุทร"]
+  },
+  {
+    "word": "odd",
+    "definition": ["แปลก", "ประหลาด", "ผิดปกติ", "เลขคี่"]
+  },
+  {
+    "word": "odds",
+    "definition": ["โอกาสที่จะเป็นไปได้", "ความได้เปรียบเสียเปรียบ"]
+  },
+  {
+    "word": "of",
+    "definition": ["ของ", "เกี่ยวกับ"]
+  },
+  {
+    "word": "of course",
+    "definition": ["แน่นอน"]
+  },
+  {
+    "word": "off",
+    "definition": ["ออกจาก", "จากไป", "ปิด", "ลดราคา"]
+  },
+  {
+    "word": "offence",
+    "definition": ["ความรู้สึกขุ่นเคือง", "การทำให้ไม่พอใจ", "ความผิด"]
+  },
+  {
+    "word": "offer",
+    "definition": ["เสนอ", "ข้อเสนอ", "ให้"]
+  },
+  {
+    "word": "office",
+    "definition": ["สำนักงาน", "ตำแหน่ง"]
+  },
+  {
+    "word": "officer",
+    "definition": ["พนักงาน", "เจ้าหน้าที่", "นายทหาร"]
+  },
+  {
+    "word": "official",
+    "definition": ["ข้าราชการ", "ที่เป็นทางการ"]
+  },
+  {
+    "word": "often",
+    "definition": ["บ่อยครั้ง", "บ่อยๆ"]
+  },
+  {
+    "word": "oil",
+    "definition": ["น้ำมัน"]
+  },
+  {
+    "word": "OK",
+    "definition": ["ตกลง"]
+  },
+  {
+    "word": "old",
+    "definition": ["แก่", "เก่าแก่", "อายุ"]
+  },
+  {
+    "word": "on",
+    "definition": ["บน", "เปิด"]
+  },
+  {
+    "word": "once",
+    "definition": ["ครั้งหนึ่ง", "เมื่อ"]
+  },
+  {
+    "word": "one",
+    "definition": ["หนึ่ง"]
+  },
+  {
+    "word": "one another",
+    "definition": ["ซึ่งกันและกัน"]
+  },
+  {
+    "word": "onion",
+    "definition": ["หัวหอม"]
+  },
+  {
+    "word": "only",
+    "definition": ["เพียงแค่", "เท่านั้น"]
+  },
+  {
+    "word": "onto",
+    "definition": ["ไปบน", "ไปยัง"]
+  },
+  {
+    "word": "open",
+    "definition": ["เปิด", "โล่ง"]
+  },
+  {
+    "word": "opening",
+    "definition": ["ตอนเริ่มต้น", "การเปิด", "ช่องว่าง", "ตำแหน่งงานว่าง"]
+  },
+  {
+    "word": "operate",
+    "definition": ["ปฏิบัติ", "ผ่าตัด", "ทำงาน"]
+  },
+  {
+    "word": "operation",
+    "definition": ["ปฏิบัติการ", "การกระทำ", "การผ่าตัด"]
+  },
+  {
+    "word": "operator",
+    "definition": ["ผู้ควบคุมเครื่อง", "พนักงานต่อโทรศัพท์"]
+  },
+  {
+    "word": "opinion",
+    "definition": ["ความคิดเห็น"]
+  },
+  {
+    "word": "opponent",
+    "definition": ["คู่ต่อสู้", "ที่เป็นฝ่ายตรงข้าม"]
+  },
+  {
+    "word": "opportunity",
+    "definition": ["โอกาส"]
+  },
+  {
+    "word": "oppose",
+    "definition": ["คัดค้าน", "ต่อต้าน", "ไม่เห็นด้วย"]
+  },
+  {
+    "word": "opposite",
+    "definition": ["ตรงกันข้าม"]
+  },
+  {
+    "word": "opposition",
+    "definition": ["ฝ่ายค้าน", "ตำแหน่งที่อยู่ตรงกันข้าม", "การคัดค้าน"]
+  },
+  {
+    "word": "option",
+    "definition": ["การเลือก", "ทางเลือก"]
+  },
+  {
+    "word": "or",
+    "definition": ["หรือ", "มิเช่นนั้น"]
+  },
+  {
+    "word": "orange",
+    "definition": ["ส้ม", "สีส้ม"]
+  },
+  {
+    "word": "order",
+    "definition": ["เรียงลำดับ", "คำสั่ง", "สั่งซื้อ", "ความสงบเรียบร้อย"]
+  },
+  {
+    "word": "ordinary",
+    "definition": ["ปกติ", "ธรรมดา", "สามัญ", "พื้นๆ"]
+  },
+  {
+    "word": "organ",
+    "definition": ["อวัยวะ", "ออร์แกน (เครื่องดนตรี)"]
+  },
+  {
+    "word": "organic",
+    "definition": ["เกี่ยวกับอวัยวะ", "เกี่ยวกับอินทรีย์", "อินทรีย์"]
+  },
+  {
+    "word": "organization",
+    "definition": ["องค์การ", "คณะ", "องค์กร"]
+  },
+  {
+    "word": "organize",
+    "definition": ["รวบรวม", "ทำให้เป็นระเบียบ", "จัดตั้ง"]
+  },
+  {
+    "word": "organized",
+    "definition": ["ซึ่งจัดตั้ง", "ที่เป็นระเบียบ"]
+  },
+  {
+    "word": "origin",
+    "definition": ["แหล่งกำเนิด", "ที่มา"]
+  },
+  {
+    "word": "original",
+    "definition": ["แรกเริ่ม", "ดั้งเดิม", "ต้นฉบับ"]
+  },
+  {
+    "word": "originally",
+    "definition": ["อย่างดั้งเดิม", "เริ่มแรก"]
+  },
+  {
+    "word": "other",
+    "definition": ["อื่นๆ"]
+  },
+  {
+    "word": "otherwise",
+    "definition": ["มิฉะนั้น"]
+  },
+  {
+    "word": "ought to",
+    "definition": ["ควรจะ"]
+  },
+  {
+    "word": "ounce",
+    "definition": ["หน่วยวัดปริมาตรหรือความสูงของเหลว", "ออนซ์"]
+  },
+  {
+    "word": "our",
+    "definition": ["ของเรา"]
+  },
+  {
+    "word": "ours",
+    "definition": ["ของเราเอง"]
+  },
+  {
+    "word": "ourselves",
+    "definition": ["ตัวของเราเอง"]
+  },
+  {
+    "word": "out",
+    "definition": ["ข้างนอก", "ออกไป", "หมด"]
+  },
+  {
+    "word": "outcome",
+    "definition": ["ผลลัพธ์"]
+  },
+  {
+    "word": "output",
+    "definition": ["ผลที่ได้", "ผลผลิต"]
+  },
+  {
+    "word": "outside",
+    "definition": ["ข้างนอก", "ด้านนอก"]
+  },
+  {
+    "word": "outstanding",
+    "definition": ["เด่น", "สะดุดตา", "ค้างชำระ"]
+  },
+  {
+    "word": "oven",
+    "definition": ["เตาอบ"]
+  },
+  {
+    "word": "over",
+    "definition": ["เหนือ", "ข้าม", "อีกครั้ง", "มากกว่า", "จบ"]
+  },
+  {
+    "word": "overall",
+    "definition": ["ทั้งหมด", "โดยรวม"]
+  },
+  {
+    "word": "overcome",
+    "definition": ["มีชัย", "พิชิต", "เอาชนะ"]
+  },
+  {
+    "word": "overseas",
+    "definition": ["โพ้นทะเล", "ต่างประเทศ"]
+  },
+  {
+    "word": "overtime",
+    "definition": ["นอกเวลาปกติ", "ล่วงเวลา"]
+  },
+  {
+    "word": "owe",
+    "definition": ["เป็นหนี้"]
+  },
+  {
+    "word": "own",
+    "definition": ["ด้วยตัวเอง", "เป็นเจ้าของ"]
+  },
+  {
+    "word": "owner",
+    "definition": ["เจ้าของ"]
+  },
+  {
+    "word": "ownership",
+    "definition": ["ความเป็นเจ้าของ", "กรรมสิทธิ์"]
+  },
+  {
+    "word": "pace",
+    "definition": ["ก้าว", "ฝีเท้า", "จังหวะ"]
+  },
+  {
+    "word": "pack",
+    "definition": ["ห่อ", "มัด", "จัดกระเป๋า", "ฝูง (หมาป่า)"]
+  },
+  {
+    "word": "package",
+    "definition": ["ห่อ", "หีบ", "บรรจุภัณฑ์"]
+  },
+  {
+    "word": "packet",
+    "definition": ["ห่อของเล็กๆ", "ซอง"]
+  },
+  {
+    "word": "pad",
+    "definition": ["เบาะ", "แผ่นซับ", "สมุดฉีก"]
+  },
+  {
+    "word": "page",
+    "definition": ["หน้าหนังสือ", "เรียกตามตัว"]
+  },
+  {
+    "word": "pain",
+    "definition": ["ความเจ็บปวด", "รู้สึกเจ็บ"]
+  },
+  {
+    "word": "paint",
+    "definition": ["วาดภาพสี", "ทาสี", "สี"]
+  },
+  {
+    "word": "painting",
+    "definition": ["การทาสี", "ภาพวาด"]
+  },
+  {
+    "word": "pair",
+    "definition": ["คู่", "เข้าคู่"]
+  },
+  {
+    "word": "palace",
+    "definition": ["พระราชวัง", "วัง"]
+  },
+  {
+    "word": "pale",
+    "definition": ["ซีด", "ซีดขาว", "จาง", "(สี)อ่อน"]
+  },
+  {
+    "word": "pan",
+    "definition": ["ถาด", "กระทะ"]
+  },
+  {
+    "word": "panel",
+    "definition": ["แผงควบคุมไฟฟ้า", "คณะผู้อภิปราย"]
+  },
+  {
+    "word": "panic",
+    "definition": ["ตื่นตระหนก", "ความตื่นตระหนก"]
+  },
+  {
+    "word": "pants",
+    "definition": ["กางเกง"]
+  },
+  {
+    "word": "paper",
+    "definition": ["กระดาษ", "หนังสือพิมพ์", "เอกสาร"]
+  },
+  {
+    "word": "parcel",
+    "definition": ["หีบห่อ", "พัสดุ"]
+  },
+  {
+    "word": "pardon",
+    "definition": ["ขอโทษ", "ขออภัย"]
+  },
+  {
+    "word": "parent",
+    "definition": ["พ่อแม่", "ผู้ปกครอง"]
+  },
+  {
+    "word": "park",
+    "definition": ["สวนสาธารณะ", "จอดรถ"]
+  },
+  {
+    "word": "parking",
+    "definition": ["ที่จอดรถ"]
+  },
+  {
+    "word": "parliament",
+    "definition": ["สภา", "รัฐสภา"]
+  },
+  {
+    "word": "part",
+    "definition": ["ส่วน", "ฝ่าย", "บทบาท", "แยกจากกัน"]
+  },
+  {
+    "word": "participate",
+    "definition": ["มีส่วนร่วม", "เข้าร่วม", "ร่วมกระทำ"]
+  },
+  {
+    "word": "particular",
+    "definition": ["โดยเฉพาะ", "จำเพาะ", "จู้จี้"]
+  },
+  {
+    "word": "particularly",
+    "definition": ["โดยเฉพาะ", "เป็นพิเศษ"]
+  },
+  {
+    "word": "partly",
+    "definition": ["บางส่วน"]
+  },
+  {
+    "word": "partner",
+    "definition": ["หุ้นส่วน", "คู่ครอง", "คู่หู"]
+  },
+  {
+    "word": "partnership",
+    "definition": ["ห้างหุ้นส่วน", "ความเป็นหุ้นส่วน"]
+  },
+  {
+    "word": "party",
+    "definition": ["พรรค", "พรรคการเมือง", "จัดงานเลี้ยง", "คณะ"]
+  },
+  {
+    "word": "pass",
+    "definition": ["ผ่าน", "พ้น", "สอบไล่ผ่าน", "ส่งให้"]
+  },
+  {
+    "word": "passage",
+    "definition": ["ทางผ่าน", "ทางไป", "ข้อความตอนหนึ่ง"]
+  },
+  {
+    "word": "passenger",
+    "definition": ["ผู้โดยสาร"]
+  },
+  {
+    "word": "passion",
+    "definition": ["กิเลส", "ความหลงใหล", "ความชอบอย่างแรงกล้า"]
+  },
+  {
+    "word": "past",
+    "definition": ["อดีต", "ที่ผ่านมา", "ผ่าน"]
+  },
+  {
+    "word": "path",
+    "definition": ["ทางเดิน", "เส้นทาง"]
+  },
+  {
+    "word": "patience",
+    "definition": ["ความอดทน"]
+  },
+  {
+    "word": "patient",
+    "definition": ["คนไข้", "อดทน"]
+  },
+  {
+    "word": "pattern",
+    "definition": ["แบบแผน", "รูปแบบ", "ลวดลาย"]
+  },
+  {
+    "word": "pause",
+    "definition": ["หยุดชะงักชั่วคราว", "หยุดพัก"]
+  },
+  {
+    "word": "pay",
+    "definition": ["จ่าย", "ชำระ", "ค่าจ้าง"]
+  },
+  {
+    "word": "payment",
+    "definition": ["การชำระเงิน", "การจ่ายเงิน"]
+  },
+  {
+    "word": "peace",
+    "definition": ["ความสงบ", "สันติภาพ"]
+  },
+  {
+    "word": "peaceful",
+    "definition": ["สงบ", "มีสันติภาพ"]
+  },
+  {
+    "word": "peak",
+    "definition": ["จุดสูงสุด", "ยอดเขา", "ขึ้นถึงขีดสุด"]
+  },
+  {
+    "word": "pen",
+    "definition": ["ปากกา", "คอกสัตว์"]
+  },
+  {
+    "word": "penalty",
+    "definition": ["การลงโทษ", "ค่าปรับ", "จุดโทษ"]
+  },
+  {
+    "word": "pencil",
+    "definition": ["ดินสอ"]
+  },
+  {
+    "word": "penny",
+    "definition": ["เหรียญเพนนีของอังกฤษ"]
+  },
+  {
+    "word": "pension",
+    "definition": ["เบี้ยบำนาญ", "เงินบำนาญ"]
+  },
+  {
+    "word": "people",
+    "definition": ["ประชาชน", "ผู้คน"]
+  },
+  {
+    "word": "pepper",
+    "definition": ["พริกไทย", "พริกหยวก"]
+  },
+  {
+    "word": "per",
+    "definition": ["ต่อ"]
+  },
+  {
+    "word": "perceive",
+    "definition": ["รับรู้", "เข้าใจ"]
+  },
+  {
+    "word": "percent",
+    "definition": ["ร้อยละ", "เปอร์เซ็นต์"]
+  },
+  {
+    "word": "percentage",
+    "definition": ["อัตราร้อยละ", "ค่าเปอร์เซ็นต์"]
+  },
+  {
+    "word": "perception",
+    "definition": ["การรับรู้", "ความเข้าใจ"]
+  },
+  {
+    "word": "perfect",
+    "definition": ["สมบูรณ์", "ดีพร้อม", "ยอดเยี่ยม"]
+  },
+  {
+    "word": "perfectly",
+    "definition": ["อย่างสมบูรณ์", "อย่างยอดเยี่ยม"]
+  },
+  {
+    "word": "perform",
+    "definition": ["กระทำ", "ปฏิบัติ", "ดำเนินการ", "แสดง"]
+  },
+  {
+    "word": "performance",
+    "definition": ["การปฏิบัติ", "การแสดง", "ประสิทธิภาพ"]
+  },
+  {
+    "word": "perhaps",
+    "definition": ["บางที"]
+  },
+  {
+    "word": "period",
+    "definition": ["ระยะเวลา", "สมัย", "ยุค", "ชั่วโมงเรียน", "ประจำเดือน"]
+  },
+  {
+    "word": "permanent",
+    "definition": ["ทนทาน", "ถาวร"]
+  },
+  {
+    "word": "permission",
+    "definition": ["การอนุญาต"]
+  },
+  {
+    "word": "permit",
+    "definition": ["อนุญาต", "ยอม", "ใบอนุญาต"]
+  },
+  {
+    "word": "person",
+    "definition": ["บุคคล"]
+  },
+  {
+    "word": "personal",
+    "definition": ["ส่วนตัว", "ส่วนบุคคล"]
+  },
+  {
+    "word": "personality",
+    "definition": ["บุคลิกภาพ"]
+  },
+  {
+    "word": "personally",
+    "definition": ["โดยส่วนตัว", "โดยตรง"]
+  },
+  {
+    "word": "personnel",
+    "definition": ["พนักงาน", "ฝ่ายบุคคล"]
+  },
+  {
+    "word": "perspective",
+    "definition": ["ทัศนียภาพ", "ความคิด", "มุมมอง"]
+  },
+  {
+    "word": "persuade",
+    "definition": ["ชักชวน", "ชักจูง", "โน้มน้าว"]
+  },
+  {
+    "word": "petrol",
+    "definition": ["น้ำมันรถยนต์", "น้ำมันเบนซิน"]
+  },
+  {
+    "word": "phase",
+    "definition": ["ระยะ", "ระยะโรค", "ช่วง"]
+  },
+  {
+    "word": "philosophy",
+    "definition": ["วิชาปรัชญา", "ปรัชญา"]
+  },
+  {
+    "word": "phone",
+    "definition": ["เสียง", "โทรศัพท์"]
+  },
+  {
+    "word": "photo",
+    "definition": ["รูปถ่าย"]
+  },
+  {
+    "word": "photocopy",
+    "definition": ["ถ่ายเอกสาร", "สำเนาเอกสาร"]
+  }
+]

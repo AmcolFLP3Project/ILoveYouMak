@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Mnemonics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Image Gallery */
+        .gallery-section {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-bottom: 3px solid #e9ecef;
+        }
+
+        .gallery-title {
+            text-align: center;
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .gallery-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .gallery-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .gallery-counter {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 50px 30px;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .section-intro {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Mind Map Styles */
+        .mind-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .central-node {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px 50px;
+            border-radius: 50px;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .central-node::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+            border-radius: 55px;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .branches-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .branch {
+            background: white;
+            border: 3px solid #3498db;
+            border-radius: 20px;
+            padding: 25px;
+            min-width: 350px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .branch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .branch:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .branch-title {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .sub-branches {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sub-branch {
+            background: #ecf0f1;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .sub-branch:hover {
+            background: #d5dbdb;
+            border-left-width: 6px;
+        }
+
+        .sub-branch-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .sub-branch-example {
+            font-style: italic;
+            color: #7f8c8d;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        /* Flowchart Styles */
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 20px;
+        }
+
+        .flow-level {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flow-node {
+            background: white;
+            border: 3px solid #3498db;
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .flow-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .start-node {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border-color: #c0392b;
+            font-size: 1.2em;
+        }
+
+        .decision-node {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border-color: #e67e22;
+            clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+            padding: 20px 35px;
+        }
+
+        .process-node {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            border-color: #229954;
+        }
+
+        .flow-arrow {
+            font-size: 2em;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .grammar-table th {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .grammar-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            vertical-align: top;
+        }
+
+        .grammar-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .grammar-table tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+
+        .tense-name {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+            text-align: center;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            margin: -18px -15px 15px -15px;
+            padding: 15px;
+        }
+
+        .formula {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 8px 0;
+            border: 1px solid #ffeaa7;
+            font-weight: bold;
+        }
+
+        .example {
+            background: #d1ecf1;
+            padding: 12px;
+            border-radius: 8px;
+            font-style: italic;
+            margin: 8px 0;
+            border: 1px solid #85C1E9;
+        }
+
+        .usage {
+            background: #d4edda;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            margin: 8px 0;
+            border: 1px solid #A9DFBF;
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+
+        .timeline-title {
+            text-align: center;
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 50px 0;
+        }
+
+        .timeline-line {
+            height: 6px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60);
+            border-radius: 3px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .time-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .time-marker {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .tense-card {
+            background: white;
+            border: 2px solid #3498db;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tense-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-color: #2980b9;
+        }
+
+        .tense-card-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .tense-card-example {
+            font-style: italic;
+            color: #7f8c8d;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .tense-card-usage {
+            font-size: 0.9em;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 50px 30px;
+            border-top: 5px solid #3498db;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            background: #e3f2fd;
+            border-color: #3498db;
+        }
+
+        .fill-blank {
+            background: #f8f9fa;
+            border: 2px solid #3498db;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .answer-key {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .answer-key h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .answer {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 30px 20px;
+            }
+
+            .branches-container {
+                gap: 20px;
+            }
+
+            .branch {
+                min-width: 280px;
+            }
+
+            .flow-level {
+                gap: 15px;
+            }
+
+            .flow-node {
+                min-width: 150px;
+                padding: 15px 20px;
+            }
+
+            .tense-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-container {
+                padding: 20px;
+            }
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Footer Word Building Button */
+        .word-building-btn {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 1.25em;
+            font-weight: 700;
+            box-shadow: 0 8px 32px rgba(34, 197, 94, 0.25), 0 2px 8px rgba(56, 249, 215, 0.15);
+            cursor: pointer;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .word-building-btn:hover {
+            background: linear-gradient(135deg, #38f9d7 0%, #43e97b 100%);
+            box-shadow: 0 8px 32px rgba(34, 197, 94, 0.25), 0 2px 8px rgba(56, 249, 215, 0.15);
+        }
+        .word-building-btn .icon {
+            font-size: 1.5em;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>English Grammar & Modal Verbs</h1>
+            <p>Complete Learning Guide with Model Mnemonics</p>
+        </header>
+
+        <!-- Image Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="gallery-title">📚 Visual Learning Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-wrapper" id="galleryWrapper">
+                    <!-- Gallery slides will be injected by JS -->
+                </div>
+                <div class="gallery-controls">
+                    <button class="gallery-btn" onclick="previousImage()" id="prevBtn">← Previous</button>
+                    <div class="gallery-counter" id="galleryCounter">Image 1 of 12</div>
+                    <button class="gallery-btn" onclick="nextImage()" id="nextBtn">Next →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Mnemonic 1: Mind Map -->
+        <section class="content-section">
+            <h2 class="section-title">🧠 Model Mnemonic 1</h2>
+            <div class="section-intro">
+                <h3>Visual Organization of Grammar Concepts</h3>
+                <p>Mind maps help you see the big picture and understand how different grammar elements connect. This visual approach makes complex grammar relationships clear and memorable.</p>
+            </div>
+
+            <div class="mind-map">
+                <div class="central-node">English Grammar</div>
+                
+                <div class="branches-container">
+                    <div class="branch">
+                        <div class="branch-title">TENSES</div>
+                        <div class="sub-branches">
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Present Tenses</div>
+                                <div class="sub-branch-example">Actions happening now or regularly</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Simple Present:</strong> I work daily<br>
+                                    <strong>Present Continuous:</strong> I am working now<br>
+                                    <strong>Present Perfect:</strong> I have worked here for 5 years<br>
+                                    <strong>Present Perfect Continuous:</strong> I have been working since morning
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Past Tenses</div>
+                                <div class="sub-branch-example">Actions completed in the past</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Simple Past:</strong> I worked yesterday<br>
+                                    <strong>Past Continuous:</strong> I was working at 3pm<br>
+                                    <strong>Past Perfect:</strong> I had worked before you came<br>
+                                    <strong>Past Perfect Continuous:</strong> I had been working for hours
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Future Tenses</div>
+                                <div class="sub-branch-example">Actions that will happen</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Simple Future:</strong> I will work tomorrow<br>
+                                    <strong>Future Continuous:</strong> I will be working at 5pm<br>
+                                    <strong>Future Perfect:</strong> I will have worked 8 hours by evening<br>
+                                    <strong>Future Perfect Continuous:</strong> I will have been working for 10 hours
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="branch">
+                        <div class="branch-title">MODAL VERBS</div>
+                        <div class="sub-branches">
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Ability</div>
+                                <div class="sub-branch-example">Expressing what someone can do</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Can:</strong> I can swim (present ability)<br>
+                                    <strong>Could:</strong> I could swim when I was young (past ability)
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Permission</div>
+                                <div class="sub-branch-example">Asking for or giving permission</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>May:</strong> May I leave early? (formal)<br>
+                                    <strong>Can:</strong> Can I use your phone? (informal)<br>
+                                    <strong>Might:</strong> Might I suggest something? (very polite)
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Obligation</div>
+                                <div class="sub-branch-example">What you must or should do</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Must:</strong> You must finish this today (strong)<br>
+                                    <strong>Have to:</strong> I have to work late (external obligation)<br>
+                                    <strong>Should:</strong> You should exercise more (advice)
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Probability</div>
+                                <div class="sub-branch-example">How likely something is to happen</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Will:</strong> It will rain tomorrow (95% certain)<br>
+                                    <strong>May/Might:</strong> It might be true (30-50% certain)<br>
+                                    <strong>Could:</strong> It could happen (possible)
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">Advice</div>
+                                <div class="sub-branch-example">Recommendations and suggestions</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Should:</strong> You should see a doctor<br>
+                                    <strong>Ought to:</strong> We ought to help them (moral duty)<br>
+                                    <strong>Had better:</strong> You'd better hurry (warning)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                💡 Key Insight: Every English sentence uses either a tense or a modal verb to show time and attitude!
+            </div>
+        </section>
+
+        <!-- Model Mnemonic 2: Flowchart -->
+        <section class="content-section">
+            <h2 class="section-title">🔄 Model Mnemonic 2: Flowchart</h2>
+            <div class="section-intro">
+                <h3>Decision-Making Guide for Perfect Grammar</h3>
+                <p>Follow these step-by-step flowcharts to choose the correct tense or modal verb every time. No more guessing!</p>
+            </div>
+
+            <!-- Tense Selection Flowchart -->
+            <div class="timeline-container">
+                <h3 class="timeline-title">Tense Selection Flowchart</h3>
+                <div class="flowchart">
+                    <div class="flow-level">
+                        <div class="flow-node start-node">PRESENT TIME</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-level">
+                        <div class="flow-node decision-node">What type of present action?</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-level">
+                        <div class="flow-node process-node">Habit/Routine<br>→ Simple Present<br>"I work daily"</div>
+                        <div class="flow-node process-node">Happening Now<br>→ Present Continuous<br>"I am working"</div>
+                        <div class="flow-node process-node">Past→Present Effect<br>→ Present Perfect<br>"I have worked"</div>
+                        <div class="flow-node process-node">Duration+Still Going<br>→ Present Perfect Continuous<br>"I have been working"</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Verb Selection Flowchart -->
+            <div class="timeline-container">
+                <h3 class="timeline-title">Modal Verb Selection</h3>
+                <div class="flowchart">
+                    <div class="flow-level">
+                        <div class="flow-node start-node">Need a Modal Verb?</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-level">
+                        <div class="flow-node decision-node">What do you want to express?</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-level">
+                        <div class="flow-node process-node">Ability<br>→ Can/Could<br>"I can swim"</div>
+                        <div class="flow-node process-node">Permission<br>→ May/Might<br>"May I leave?"</div>
+                        <div class="flow-node process-node">Obligation<br>→ Must/Should<br>"You must go"</div>
+                        <div class="flow-node process-node">Probability<br>→ Will/Might<br>"It will rain"</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                🎯 Pro Tip: Always ask "WHEN?" first for tenses, then "WHAT ATTITUDE?" for modals!
+            </div>
+        </section>
+
+        <!-- Model Mnemonic 3: Tables -->
+        <section class="content-section">
+            <h2 class="section-title">📊 Model Mnemonic 3: Tables & Matrices</h2>
+            <div class="section-intro">
+                <h3>Complete Reference Tables for Quick Access</h3>
+                <p>These comprehensive tables provide instant access to structures, examples, and usage rules for all tenses and modal verbs.</p>
+            </div>
+
+            <!-- 12 Tenses Table -->
+            <h3 style="text-align: center; font-size: 1.8em; color: #2c3e50; margin: 30px 0;">Complete 12 Tenses Reference Table</h3>
+            <div class="table-container">
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect / Time</th>
+                            <th>PRESENT</th>
+                            <th>PAST</th>
+                            <th>FUTURE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tense-name">SIMPLE</div>
+                            </td>
+
+                                <div class="formula">Subject + Base Verb (s/es)</div>
+                                <div class="example">"I work every day"<br>"She works in London"</div>
+                                <div class="usage">• Habits and routines<br>• General truths<br>• Permanent situations</div>
+                            </td>
+                            <td>
+                                <div class="formula">Subject + Past Form</div>
+                                <div class="example">"I worked yesterday"<br>"They came last week"</div>
+                                <div class="usage">• Completed past actions<br>• Past habits<br>• Historical facts</div>
+                            </td>
+                            <td>
+                                <div class="formula">Will + Base Verb</div>
+                                <div class="example">"I will work tomorrow"<br>"It will be sunny"</div>
+                                <div class="usage">• Future plans<br>• Predictions<br>• Promises</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">CONTINUOUS</div>
+                            </td>
+                            <td>
+                                <div class="formula">am/is/are + Verb+ing</div>
+                                <div class="example">"I am working now"<br>"She is reading"</div>
+                                <div class="usage">• Actions happening now<br>• Temporary situations<br>• Future arrangements</div>
+                            </td>
+                            <td>
+                                <div class="formula">was/were + Verb+ing</div>
+                                <div class="example">"I was working at 3pm"<br>"They were sleeping"</div>
+                                <div class="usage">• Ongoing past actions<br>• Interrupted actions<br>• Background events</div>
+                            </td>
+                            <td>
+                                <div class="formula">will be + Verb+ing</div>
+                                <div class="example">"I will be working at 5pm"<br>"We'll be traveling"</div>
+                                <div class="usage">• Ongoing future actions<br>• Future at specific time<br>• Natural progression</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">PERFECT</div>
+                            </td>
+                            <td>
+                                <div class="formula">have/has + Past Participle</div>
+                                <div class="example">"I have worked here for 5 years"<br>"She has finished"</div>
+                                <div class="usage">• Past actions affecting present<br>• Life experiences<br>• Recent past with present relevance</div>
+                            </td>
+                            <td>
+                                <div class="formula">had + Past Participle</div>
+                                <div class="example">"I had worked before you arrived"<br>"She had already left"</div>
+                                <div class="usage">• Actions before another past action<br>• Past of past<br>• Completed by past time</div>
+                            </td>
+                            <td>
+                                <div class="formula">will have + Past Participle</div>
+                                <div class="example">"I will have worked 8 hours by 6pm"<br>"We'll have arrived by then"</div>
+                                <div class="usage">• Actions completed by future time<br>• Future achievements<br>• Predictions about completion</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">PERFECT CONTINUOUS</div>
+                            </td>
+                            <td>
+                                <div class="formula">have/has been + Verb+ing</div>
+                                <div class="example">"I have been working since 9am"<br>"It has been raining"</div>
+                                <div class="usage">• Ongoing actions with duration<br>• Emphasis on continuity<br>• Recent actions with present results</div>
+                            </td>
+                            <td>
+                                <div class="formula">had been + Verb+ing</div>
+                                <div class="example">"I had been working for 3 hours when you called"</div>
+                                <div class="usage">• Ongoing past action with duration<br>• Actions continuing up to past point<br>• Emphasis on duration before interruption</div>
+                            </td>
+                            <div class="formula">will have been + Verb+ing</div>
+                            <div class="example">"I will have been working for 10 hours by evening"</div>
+                            <div class="usage">• Duration continuing until future point<br>• Emphasis on ongoing nature<br>• Future duration calculations</div>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal Verbs Table -->
+            <h3 style="text-align: center; font-size: 1.8em; color: #2c3e50; margin: 40px 0 20px 0;">Modal Verbs Functions Matrix</h3>
+            <div class="table-container">
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Function</th>
+                            <th>Modal Verbs</th>
+                            <th>Examples</th>
+                            <th>Usage Notes</th>
+                            <th>Formality Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tense-name">ABILITY</div>
+                            </td>
+                            <td><strong>can, could, be able to</strong></td>
+                            <td>
+                                <div class="example">"I can swim very well"</div>
+                                <div class="example">"I could swim when I was 5"</div>
+                                <div class="example">"I will be able to help you"</div>
+                            </td>
+                            <td class="usage">Can = present ability<br>Could = past ability<br>Be able to = all tenses</td>
+                            <td>Informal to Formal</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">PERMISSION</div>
+                            </td>
+                            <td><strong>may, might, can, could</strong></td>
+                            <td>
+                                <div class="example">"May I leave early?" (formal)</div>
+                                <div class="example">"Can I borrow your pen?" (informal)</div>
+                                <div class="example">"Could I use your phone?" (polite)</div>
+                            </td>
+                            <td class="usage">May = most formal<br>Can = informal<br>Could = polite<br>Might = very formal</td>
+                            <td>Informal → Very Formal</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">OBLIGATION</div>
+                            </td>
+                            <td><strong>must, have to, should, ought to</strong></td>
+                            <td>
+                                <div class="example">"You must finish this today" (strong)</div>
+                                <div class="example">"I have to work late" (external)</div>
+                                <div class="example">"You should exercise more" (advice)</div>
+                            </td>
+                            <td class="usage">Must = internal obligation<br>Have to = external obligation<br>Should = recommendation</td>
+                            <td>Neutral to Strong</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">PROBABILITY</div>
+                            </td>
+                            <td><strong>will, would, may, might, could</strong></td>
+                            <td>
+                                <div class="example">"It will rain tomorrow" (95%)</div>
+                                <div class="example">"It may rain later" (50%)</div>
+                                <div class="example">"It might be true" (30%)</div>
+                            </td>
+                            <td class="usage">Will = high certainty<br>May = medium certainty<br>Might/Could = low certainty</td>
+                            <td>Neutral</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">ADVICE</div>
+                            </td>
+                            <td><strong>should, ought to, had better</strong></td>
+                            <td>
+                                <div class="example">"You should see a doctor"</div>
+                                <div class="example">"We ought to help them"</div>
+                                <div class="example">"You'd better hurry up!"</div>
+                            </td>
+                            <td class="usage">Should = general advice<br>Ought to = moral obligation<br>Had better = warning/urgency</td>
+                            <td>Neutral to Strong</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tense-name">POLITENESS</div>
+                            </td>
+                            <td><strong>would, could</strong></td>
+                            <td>
+                                <div class="example">"Would you help me, please?"</div>
+                                <div class="example">"Could you wait a moment?"</div>
+                                <div class="example">"Would you mind closing the door?"</div>
+                            </td>
+                            <td class="usage">Would = polite requests<br>Could = polite questions<br>More polite than will/can</td>
+                            <td>Polite to Very Polite</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                📚 Memory Trick: APOPPA - Ability, Permission, Obligation, Probability, Politeness, Advice!
+            </div>
+        </section>
+
+        <!-- Model Mnemonic 4: Timeline -->
+        <section class="content-section">
+            <h2 class="section-title">⏰ Model Mnemonic 4: Timeline Diagrams</h2>
+            <div class="section-intro">
+                <h3>Visual Time Relationships and Certainty Scales</h3>
+                <p>See how tenses relate to time and how modal verbs express different levels of certainty through these intuitive timeline visualizations.</p>
+            </div>
+
+            <!-- Grammar Timeline -->
+            <div class="timeline-container">
+                <h3 class="timeline-title">Complete Grammar Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div class="time-markers">
+                        <div class="time-marker">PAST</div>
+                        <div class="time-marker">PRESENT</div>
+                        <div class="time-marker">FUTURE</div>
+                    </div>
+                </div>
+
+                <div class="tense-grid">
+                    <!-- Past Tenses -->
+                    <div class="tense-card" style="border-color: #e74c3c;">
+                        <div class="tense-card-title">Simple Past</div>
+                        <div class="tense-card-example">"I worked yesterday"</div>
+                        <div class="tense-card-usage">Completed past action</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #e74c3c;">
+                        <div class="tense-card-title">Past Continuous</div>
+                        <div class="tense-card-example">"I was working at 3pm"</div>
+                        <div class="tense-card-usage">Ongoing past action</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #e74c3c;">
+                        <div class="tense-card-title">Past Perfect</div>
+                        <div class="tense-card-example">"I had worked before you came"</div>
+                        <div class="tense-card-usage">Past before past</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #e74c3c;">
+                        <div class="tense-card-title">Past Perfect Continuous</div>
+                        <div class="tense-card-example">"I had been working for hours"</div>
+                        <div class="tense-card-usage">Duration before past point</div>
+                    </div>
+
+                    <!-- Present Tenses -->
+                    <div class="tense-card" style="border-color: #f39c12;">
+                        <div class="tense-card-title">Simple Present</div>
+                        <div class="tense-card-example">"I work every day"</div>
+                        <div class="tense-card-usage">Habits and facts</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #f39c12;">
+                        <div class="tense-card-title">Present Continuous</div>
+                        <div class="tense-card-example">"I am working now"</div>
+                        <div class="tense-card-usage">Happening now</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #f39c12;">
+                        <div class="tense-card-title">Present Perfect</div>
+                        <div class="tense-card-example">"I have worked here for years"</div>
+                        <div class="tense-card-usage">Past affects present</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #f39c12;">
+                        <div class="tense-card-title">Present Perfect Continuous</div>
+                        <div class="tense-card-example">"I have been working since 9am"</div>
+                        <div class="tense-card-usage">Ongoing with duration</div>
+                    </div>
+
+                    <!-- Future Tenses -->
+                    <div class="tense-card" style="border-color: #27ae60;">
+                        <div class="tense-card-title">Simple Future</div>
+                        <div class="tense-card-example">"I will work tomorrow"</div>
+                        <div class="tense-card-usage">Future plans</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #27ae60;">
+                        <div class="tense-card-title">Future Continuous</div>
+                        <div class="tense-card-example">"I will be working at 5pm"</div>
+                        <div class="tense-card-usage">Ongoing future action</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #27ae60;">
+                        <div class="tense-card-title">Future Perfect</div>
+                        <div class="tense-card-example">"I will have worked 8 hours by 6pm"</div>
+                        <div class="tense-card-usage">Complete by future time</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #27ae60;">
+                        <div class="tense-card-title">Future Perfect Continuous</div>
+                        <div class="tense-card-example">"I will have been working for 10 hours"</div>
+                        <div class="tense-card-usage">Duration until future point</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Verbs Certainty Scale -->
+            <div class="timeline-container">
+                <h3 class="timeline-title">Modal Verbs Certainty Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-line" style="background: linear-gradient(90deg, #ff6b6b 0%, #feca57 30%, #48dbfb 70%, #0abde3 100%);"></div>
+                    <div class="time-markers">
+                        <div class="time-marker" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52);">LOW CERTAINTY</div>
+                        <div class="time-marker" style="background: linear-gradient(135deg, #feca57, #f39c12);">MEDIUM</div>
+                        <div class="time-marker" style="background: linear-gradient(135deg, #0abde3, #006ba6);">HIGH CERTAINTY</div>
+                    </div>
+                </div>
+
+                <div class="tense-grid">
+                    <div class="tense-card" style="border-color: #ff6b6b;">
+                        <div class="tense-card-title">MIGHT (30%)</div>
+                        <div class="tense-card-example">"It might rain today"</div>
+                        <div class="tense-card-usage">Very uncertain possibility</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #ff9f43;">
+                        <div class="tense-card-title">MAY (40%)</div>
+                        <div class="tense-card-example">"She may come to the party"</div>
+                        <div class="tense-card-usage">Uncertain possibility</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #feca57;">
+                        <div class="tense-card-title">COULD (50%)</div>
+                        <div class="tense-card-example">"This could be the answer"</div>
+                        <div class="tense-card-usage">50-50 possibility</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #48dbfb;">
+                        <div class="tense-card-title">SHOULD (70%)</div>
+                        <div class="tense-card-example">"The train should arrive soon"</div>
+                        <div class="tense-card-usage">Probable expectation</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #0abde3;">
+                        <div class="tense-card-title">MUST (90%)</div>
+                        <div class="tense-card-example">"She must be at home now"</div>
+                        <div class="tense-card-usage">Strong logical conclusion</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #006ba6;">
+                        <div class="tense-card-title">WILL (95%)</div>
+                        <div class="tense-card-example">"The sun will rise tomorrow"</div>
+                        <div class="tense-card-usage">Near certainty</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                💡 Timeline Tip: Perfect tenses always show completion, Continuous tenses show duration!
+            </div>
+        </section>
+
+        <!-- Practice Quiz Section -->
+        <section class="quiz-section">
+            <h2 class="section-title">📝 Practice Quiz: Test Your Knowledge</h2>
+            <div class="section-intro">
+                <h3>Apply What You've Learned</h3>
+                <p>Complete this comprehensive quiz to test your understanding of English grammar and modal verbs. Try all questions before checking the answers!</p>
+            </div>
+
+            <!-- Multiple Choice Questions -->
+            <h3 style="color: #2c3e50; margin: 30px 0 20px 0;">Part A: Multiple Choice Questions</h3>
+            
+            <div class="quiz-question">
+                <div class="question-number">Question 1</div>
+                <div class="question-text">Choose the correct tense: "I _____ English for five years."</div>
+                <div class="options">
+                    <div class="option">A) study</div>
+                    <div class="option">B) am studying</div>
+                    <div class="option">C) have studied</div>
+                    <div class="option">D) had studied</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 2</div>
+                <div class="question-text">Select the appropriate modal verb: "_____ I borrow your pencil?" (polite request)</div>
+                <div class="options">
+                    <div class="option">A) Must</div>
+                    <div class="option">B) Should</div>
+                    <div class="option">C) May</div>
+                    <div class="option">D) Will</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 3</div>
+                <div class="question-text">Which sentence shows the highest certainty?</div>
+                <div class="options">
+                    <div class="option">A) It might rain tomorrow.</div>
+                    <div class="option">B) It could rain tomorrow.</div>
+                    <div class="option">C) It will rain tomorrow.</div>
+                    <div class="option">D) It may rain tomorrow.</div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 4</div>
+                <div class="question-text">"I was reading when you called" - This sentence uses:</div>
+                <div class="options">
+                    <div class="option">A) Simple Past</div>
+                    <div class="option">B) Past Continuous</div>
+                    <div class="option">C) Past Perfect</div>
+                    <div class="option">D) Present Perfect</div>
+                </div>
+            </div>
+
+            <!-- Fill in the Blank Questions -->
+            <h3 style="color: #2c3e50; margin: 30px 0 20px 0;">Part B: Fill in the Blanks</h3>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 5</div>
+                <div class="question-text">Complete the sentence: "By next month, I <span class="fill-blank">_________</span> here for two years." (Future Perfect)</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 6</div>
+                <div class="question-text">Add the correct modal: "You <span class="fill-blank">_________</span> see a doctor about that cough." (advice)</div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 7</div>
+                <div class="question-text">Fill in: "She <span class="fill-blank">_________</span> working on this project since morning." (Present Perfect Continuous)</div>
+            </div>
+
+            <!-- Error Correction -->
+            <h3 style="color: #2c3e50; margin: 30px 0 20px 0;">Part C: Error Correction</h3>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 8</div>
+                <div class="question-text">Correct this sentence: "I am knowing him for five years."</div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                    <strong>Correction:</strong> <span class="fill-blank">_________________________</span>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 9</div>
+                <div class="question-text">Fix this sentence: "You must to complete this homework."</div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                    <strong>Correction:</strong> <span class="fill-blank">_________________________</span>
+                </div>
+            </div>
+
+            <!-- Short Answer Questions -->
+            <h3 style="color: #2c3e50; margin: 30px 0 20px 0;">Part D: Short Answer Questions</h3>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 10</div>
+                <div class="question-text">Write a sentence using Future Continuous tense about what you will be doing tomorrow at 3 PM.</div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px; min-height: 60px;">
+                    <strong>Your answer:</strong> <span class="fill-blank">_________________________</span>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 11</div>
+                <div class="question-text">Create a sentence using "should" to give advice about learning English.</div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px; min-height: 60px;">
+                    <strong>Your answer:</strong> <span class="fill-blank">_________________________</span>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <div class="question-number">Question 12</div>
+                <div class="question-text">Write a sentence using Past Perfect to show one action happened before another in the past.</div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px; min-height: 60px;">
+                    <strong>Your answer:</strong> <span class="fill-blank">_________________________</span>
+                </div>
+            </div>
+
+            <!-- Answer Key -->
+            <div class="answer-key">
+                <h3>🔑 Answer Key</h3>
+                <div class="answer"><strong>1.</strong> C) have studied - Present Perfect shows an action that started in the past and continues to affect the present.</div>
+                <div class="answer"><strong>2.</strong> C) May - "May I...' is the most polite and formal way to ask for permission.</div>
+                <div class="answer"><strong>3.</strong> C) It will rain tomorrow - "Will' expresses the highest level of certainty (95%).</div>
+                <div class="answer"><strong>4.</strong> B) Past Continuous - "Was reading' shows an ongoing action in the past that was interrupted.</div>
+                <div class="answer"><strong>5.</strong> will have worked / will have been working - Future Perfect shows completion by a future time.</div>
+                <div class="answer"><strong>6.</strong> should - "Should' is used to give advice or make recommendations.</div>
+                <div class="answer"><strong>7.</strong> has been - Present Perfect Continuous emphasizes duration of ongoing action.</div>
+                <div class="answer"><strong>8.</strong> "I have known him for five years." - Use Present Perfect with stative verbs like "know".</div>
+                <div class="answer"><strong>9.</strong> "You must complete this homework." - Modal verbs are followed by base form (no "to").</div>
+                <div class="answer"><strong>10.</strong> Sample: "I will be working at the office tomorrow at 3 PM." - Future Continuous for ongoing future action.</div>
+                <div class="answer"><strong>11.</strong> Sample: "You should practice speaking English every day to improve." - "Should' for advice.</div>
+                <div class="answer"><strong>12.</strong> Sample: "I had finished my homework before my friends arrived." - Past Perfect shows earlier action.</div>
+            </div>
+
+            <div class="highlight-box">
+                🎉 Great job completing the quiz! Review the answers and practice the areas where you need improvement.
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="content-section">
+            <h2 class="section-title">❤️❤️❤️❤️❤️❤️❤️❤️</h2>
+            <div class="section-intro">
+                <h3>❤️❤️❤️❤️❤️❤️❤️❤️❤️</h3>
+                <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️:</p>
+            </div>
+
+            <div class="branches-container">
+                <div class="branch">
+                    <div class="branch-title">🧠 Mind Maps Mastered</div>
+                    <div class="sub-branches">
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Visual Organization</div>
+                            <div class="sub-branch-example">You can now see grammar as connected concepts, not isolated rules</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Memory Enhancement</div>
+                            <div class="sub-branch-example">Branch structure helps you remember relationships between tenses and modals</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Quick Review</div>
+                            <div class="sub-branch-example">One glance at a mind map refreshes your entire understanding</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch">
+                    <div class="branch-title">🔄 Flowcharts Conquered</div>
+                    <div class="sub-branches">
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Decision Making</div>
+                            <div class="sub-branch-example">You now have clear pathways to choose the right tense or modal</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Confidence Building</div>
+                            <div class="sub-branch-example">No more guessing - follow the logical flow to perfect grammar</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Problem Solving</div>
+                            <div class="sub-branch-example">Complex grammar choices become simple step-by-step processes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch">
+                    <div class="branch-title">📊 Tables Utilized</div>
+                    <div class="sub-branches">
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Quick Reference</div>
+                            <div class="sub-branch-example">Instant access to all 12 tenses and modal functions</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Structured Learning</div>
+                            <div class="sub-branch-example">Organized information makes complex grammar manageable</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Pattern Recognition</div>
+                            <div class="sub-branch-example">You can see the systematic nature of English grammar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="branch">
+                    <div class="branch-title">⏰ Timelines Understood</div>
+                    <div class="sub-branches">
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Time Relationships</div>
+                            <div class="sub-branch-example">Clear understanding of when each tense is used</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Certainty Levels</div>
+                            <div class="sub-branch-example">Perfect grasp of modal verb probability scales</div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-branch-title">Visual Learning</div>
+                            <div class="sub-branch-example">Grammar concepts become intuitive through visualization</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="timeline-container">
+                <h3 class="timeline-title">🎯 Your Grammar Achievements</h3>
+                <div class="tense-grid">
+                    <div class="tense-card" style="border-color: #e74c3c;">
+                        <div class="tense-card-title">✅ 12 Tenses Mastered</div>
+                        <div class="tense-card-example">Complete understanding of all English tenses</div>
+                        <div class="tense-card-usage">From Simple Present to Future Perfect Continuous</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #f39c12;">
+                        <div class="tense-card-title">✅ Modal Verbs Conquered</div>
+                        <div class="tense-card-example">Perfect knowledge of ability, permission, obligation, probability, and advice</div>
+                        <div class="tense-card-usage">Can, Could, May, Might, Must, Should, Will, Would, Ought to</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #27ae60;">
+                        <div class="tense-card-title">✅ Decision Skills Developed</div>
+                        <div class="tense-card-example">Systematic approach to grammar choices</div>
+                        <div class="tense-card-usage">Flowchart methodology for perfect accuracy</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #3498db;">
+                        <div class="tense-card-title">✅ Visual Learning Applied</div>
+                        <div class="tense-card-example">Multiple learning styles integrated</div>
+                        <div class="tense-card-usage">Mind maps, timelines, and structured tables</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="section-intro">
+                <h3>🚀 Next Steps for Continued Excellence</h3>
+                <div class="tense-grid">
+                    <div class="tense-card" style="border-color: #9b59b6;">
+                        <div class="tense-card-title">Daily Practice</div>
+                        <div class="tense-card-example">Use flowcharts when writing emails, essays, or speaking</div>
+                        <div class="tense-card-usage">Build automatic grammar responses</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #e67e22;">
+                        <div class="tense-card-title">Regular Review</div>
+                        <div class="tense-card-example">Revisit tables and mind maps weekly</div>
+                        <div class="tense-card-usage">Maintain and strengthen your knowledge</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #1abc9c;">
+                        <div class="tense-card-title">Practical Application</div>
+                        <div class="tense-card-example">Apply grammar rules in real conversations and writing</div>
+                        <div class="tense-card-usage">Transform knowledge into fluent usage</div>
+                    </div>
+                    <div class="tense-card" style="border-color: #34495e;">
+                        <div class="tense-card-title">Teach Others</div>
+                        <div class="tense-card-example">Explain grammar concepts using these model mnemonics</div>
+                        <div class="tense-card-usage">Teaching reinforces your own understanding</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                🌟 Congratulations! You now have a complete, professional-level understanding of English Grammar and Modal Verbs. Keep practicing and watch your English fluency soar! 🌟
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="background: linear-gradient(135deg, #2c3e50, #3498db); color: white; text-align: center; padding: 40px 20px;">
+            <h3 style="margin-bottom: 15px;">🎓 Grammar Mastery Complete</h3>
+            <p style="font-size: 1.1em; opacity: 0.9;">Professional Educational Material Using Model Mnemonics</p>
+            <p style="margin-top: 20px; opacity: 0.7;">© 2024 English Grammar Excellence - Comprehensive Learning Guide</p>
+        </footer>
+    </div>
+
+    <script>
+        // Gallery functionality
+        let currentSlide = 0;
+    const totalSlides = 12;
+        const galleryWrapper = document.getElementById('galleryWrapper');
+        const galleryCounter = document.getElementById('galleryCounter');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Dynamically create gallery slides with images from 1.png to 16.png
+        galleryWrapper.innerHTML = '';
+        for (let i = 1; i <= totalSlides; i++) {
+            const slide = document.createElement('div');
+            slide.className = 'gallery-slide';
+            slide.style.display = 'none';
+            slide.innerHTML = `
+                <div style="text-align:center;">
+                    <img src="./${i}.png" alt="Gallery Image ${i}" style="max-width:100%; max-height:340px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.12); margin-bottom:18px;">
+                </div>
+            `;
+            galleryWrapper.appendChild(slide);
+        }
+
+        function updateGallery() {
+            // Show only the current slide, hide others
+            const slides = galleryWrapper.querySelectorAll('.gallery-slide');
+            slides.forEach((slide, idx) => {
+                slide.style.display = 'none';
+            });
+            if (slides[currentSlide]) {
+                slides[currentSlide].style.display = 'flex';
+            }
+            galleryCounter.textContent = `Image ${currentSlide + 1} of ${totalSlides}`;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextImage() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateGallery();
+            }
+        }
+
+        function previousImage() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateGallery();
+            }
+        }
+
+        // Auto-advance gallery every 5 seconds
+
+        // Remove auto-advance functionality
+        // Remove duplicate event listeners and ensure only one event per click
+        prevBtn.onclick = function(e) {
+            e.preventDefault();
+            previousImage();
+        };
+        nextBtn.onclick = function(e) {
+            e.preventDefault();
+            nextImage();
+        };
+
+        document.onkeydown = function(event) {
+            if (event.key === 'ArrowRight') {
+                nextImage();
+            } else if (event.key === 'ArrowLeft') {
+                previousImage();
+            }
+        };
+
+        // Initialize gallery
+        updateGallery();
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add interactive quiz functionality
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from siblings
+                this.parentNode.querySelectorAll('.option').forEach(opt => {
+                    opt.style.background = '#f8f9fa';
+                    opt.style.borderColor = 'transparent';
+                });
+                
+                // Highlight selected option
+                this.style.background = '#e3f2fd';
+                this.style.borderColor = '#3498db';
+            });
+        });
+
+        // Add loading animation for images
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.gallery-slide').forEach(slide => {
+                slide.style.opacity = '1';
+            });
+            // Part C: Error Correction (Questions 8, 9)
+            document.querySelectorAll('.quiz-question').forEach((question, idx) => {
+                if (idx === 7 || idx === 8) {
+                    const blank = question.querySelector('.fill-blank');
+                    if (blank) {
+                        // Create input box
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.style.padding = '6px 10px';
+                        input.style.borderRadius = '8px';
+                        input.style.border = '2px solid #3498db';
+                        input.style.marginLeft = '5px';
+                        input.style.width = '260px';
+                        input.placeholder = 'พิมพ์ประโยคที่ถูกต้อง...';
+
+                        // Create check button
+                        const btn = document.createElement('button');
+                        btn.textContent = 'Answer check';
+                        btn.style.marginLeft = '10px';
+                        btn.style.padding = '6px 16px';
+                        btn.style.borderRadius = '8px';
+                        btn.style.border = 'none';
+                        btn.style.background = '#27ae60';
+                        btn.style.color = 'white';
+                        btn.style.cursor = 'pointer';
+                        btn.style.fontWeight = 'bold';
+
+                        // Create answer box
+                        const answerBox = document.createElement('div');
+                        answerBox.className = 'answer';
+                        answerBox.style.display = 'none';
+                        answerBox.style.background = '#d4edda';
+                        answerBox.style.color = '#2c3e50';
+                        answerBox.style.marginTop = '10px';
+                        answerBox.style.borderRadius = '8px';
+                        answerBox.style.padding = '10px';
+
+                        // Insert input and button
+                        blank.replaceWith(input);
+                        input.after(btn);
+
+                        // Button click event
+                        btn.addEventListener('click', function() {
+                            let userAns = input.value.trim().toLowerCase();
+                            let correct = false;
+                            if (idx === 7) { // Q8
+                                correct = userAns === 'i have known him for five years.' || userAns === 'i have known him for five years';
+                            } else if (idx === 8) { // Q9
+                                correct = userAns === 'you must complete this homework.' || userAns === 'you must complete this homework';
+                            }
+                            answerBox.style.display = 'block';
+                            if (correct) {
+                                answerBox.textContent = "✅ ถูกต้อง! เฉลย: " + quizAnswers[idx + 1];
+                            } else {
+                                answerBox.textContent = "❌ ลองใหม่ หรือดูเฉลย: " + quizAnswers[idx + 1];
+                            }
+                        });
+
+                        // Add answer box
+                        btn.after(answerBox);
+                    }
+                }
+            });
+        });
+
+        // Part A: Multiple Choice Questions - instant feedback
+        const mcqAnswers = ["C) have studied", "C) May", "C) It will rain tomorrow.", "B) Past Continuous"];
+        document.querySelectorAll('.quiz-question').forEach((question, idx) => {
+            if (idx < 4) {
+                const options = question.querySelectorAll('.option');
+                options.forEach(opt => {
+                    opt.addEventListener('click', function() {
+                        // Remove previous feedback
+                        options.forEach(o => {
+                            o.style.background = '#f8f9fa';
+                            o.style.borderColor = 'transparent';
+                            if (o.querySelector('.mcq-icon')) o.querySelector('.mcq-icon').remove();
+                        });
+                        // Highlight selected
+                        this.style.background = '#e3f2fd';
+                        this.style.borderColor = '#3498db';
+                        // Add feedback icon
+                        let icon = document.createElement('span');
+                        icon.className = 'mcq-icon';
+                        icon.style.marginLeft = '10px';
+                        icon.style.fontSize = '1.3em';
+                        let correct = this.textContent.trim() === mcqAnswers[idx];
+                        if (correct) {
+                            icon.textContent = '✅';
+                            icon.style.color = '#27ae60';
+                        } else {
+                            icon.textContent = '❌';
+                            icon.style.color = '#e74c3c';
+                        }
+                        this.appendChild(icon);
+                    });
+                });
+            }
+        });
+
+        // Fill in the Blanks (Part B)
+        document.querySelectorAll('.quiz-question').forEach((question, idx) => {
+            // Part B: Fill in the Blanks (Questions 5, 6, 7)
+            if (idx >= 4 && idx <= 6) {
+                const blank = question.querySelector('.fill-blank');
+                if (blank) {
+                    // Create input box
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.style.padding = '6px 10px';
+                    input.style.borderRadius = '8px';
+                    input.style.border = '2px solid #3498db';
+                    input.style.marginLeft = '5px';
+                    input.style.width = '120px';
+                    input.placeholder = 'พิมพ์คำตอบ...';
+
+                    // Create check button
+                    const btn = document.createElement('button');
+                    btn.textContent = 'Answer check';
+                    btn.style.marginLeft = '10px';
+                    btn.style.padding = '6px 16px';
+                    btn.style.borderRadius = '8px';
+                    btn.style.border = 'none';
+                    btn.style.background = '#27ae60';
+                    btn.style.color = 'white';
+                    btn.style.cursor = 'pointer';
+                    btn.style.fontWeight = 'bold';
+
+                    // Create answer box
+                    const answerBox = document.createElement('div');
+                    answerBox.className = 'answer';
+                    answerBox.style.display = 'none';
+                    answerBox.style.background = '#d4edda';
+                    answerBox.style.color = '#2c3e50';
+                    answerBox.style.marginTop = '10px';
+                    answerBox.style.borderRadius = '8px';
+                    answerBox.style.padding = '10px';
+
+                    // Insert input and button
+                    blank.replaceWith(input);
+                    input.after(btn);
+
+                    // Button click event
+                    btn.addEventListener('click', function() {
+                        let userAns = input.value.trim().toLowerCase();
+                        let correct = false;
+                        if (idx === 4) { // Q5
+                            correct = userAns === 'will have worked' || userAns === 'will have been working';
+                        } else if (idx === 5) { // Q6
+                            correct = userAns === 'should';
+                        } else if (idx === 6) { // Q7
+                            correct = userAns === 'has been';
+                        }
+                        answerBox.style.display = 'block';
+                        if (correct) {
+                            answerBox.textContent = "✅ ถูกต้อง! " + quizAnswers[idx + 1];
+                        } else {
+                            answerBox.textContent = "❌ ลองใหม่ หรือดูเฉลย: " + quizAnswers[idx + 1];
+                        }
+                    });
+
+                    // Add answer box
+                    btn.after(answerBox);
+                }
+            }
+        });
+
+        // Part D: Short Answer Questions (Questions 10, 11, 12)
+        document.querySelectorAll('.quiz-question').forEach((question, idx) => {
+            if (idx >= 9 && idx <= 11) {
+                const blank = question.querySelector('.fill-blank');
+                if (blank) {
+                    // Create input box
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.style.padding = '6px 10px';
+                    input.style.borderRadius = '8px';
+                    input.style.border = '2px solid #3498db';
+                    input.style.marginLeft = '5px';
+                    input.style.width = '320px';
+                    input.placeholder = 'พิมพ์ประโยคภาษาอังกฤษ...';
+
+                    // Create check button
+                    const btn = document.createElement('button');
+                    btn.textContent = 'Answer check';
+                    btn.style.marginLeft = '10px';
+                    btn.style.padding = '6px 16px';
+                    btn.style.borderRadius = '8px';
+                    btn.style.border = 'none';
+                    btn.style.background = '#27ae60';
+                    btn.style.color = 'white';
+                    btn.style.cursor = 'pointer';
+                    btn.style.fontWeight = 'bold';
+
+                    // Create answer box
+                    const answerBox = document.createElement('div');
+                    answerBox.className = 'answer';
+                    answerBox.style.display = 'none';
+                    answerBox.style.background = '#d4edda';
+                    answerBox.style.color = '#2c3e50';
+                    answerBox.style.marginTop = '10px';
+                    answerBox.style.borderRadius = '8px';
+                    answerBox.style.padding = '10px';
+
+                    // Insert input and button
+                    blank.replaceWith(input);
+                    input.after(btn);
+
+                    // Button click event
+                    btn.addEventListener('click', function() {
+                        let userAns = input.value.trim().toLowerCase();
+                        let correct = false;
+                        let sampleAns = '';
+                        if (idx === 9) { // Q10
+                            // Accept any answer containing 'will be' and 'ing' verb
+                            correct = /will be \w+ing/.test(userAns);
+                            sampleAns = 'I will be working at the office tomorrow at 3 PM.';
+                        } else if (idx === 10) { // Q11
+                            // Accept any answer containing 'should' and 'english'
+                            correct = /should.*english/.test(userAns);
+                            sampleAns = 'You should practice speaking English every day to improve.';
+                        } else if (idx === 11) { // Q12
+                            // Accept any answer containing 'had' and 'before'
+                            correct = /had.*before/.test(userAns);
+                            sampleAns = 'I had finished my homework before my friends arrived.';
+                        }
+                        answerBox.style.display = 'block';
+                        if (correct) {
+                            answerBox.textContent = '✅ ถูกต้อง! ตัวอย่างเฉลย: ' + sampleAns;
+                        } else {
+                            answerBox.textContent = '❌ ลองใหม่ หรือดูเฉลย: ' + sampleAns;
+                        }
+                    });
+
+                    // Add answer box
+                    btn.after(answerBox);
+                }
+            }
+        });
+
+        // Quiz answer explanations
+        const quizAnswers = {
+            1: "C) have studied - Present Perfect shows an action that started in the past and continues to affect the present.",
+            2: "C) May - 'May I...' is the most polite and formal way to ask for permission.",
+            3: "C) It will rain tomorrow - 'Will' expresses the highest level of certainty (95%).",
+            4: "B) Past Continuous - 'Was reading' shows an ongoing action in the past that was interrupted.",
+            5: "will have worked / will have been working - Future Perfect shows completion by a future time.",
+            6: "should - 'Should' is used to give advice or make recommendations.",
+            7: "has been - Present Perfect Continuous emphasizes duration of ongoing action.",
+            8: "I have known him for five years.",
+            9: "You must complete this homework."
+        };
+
+        // Add loading animation for images
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.gallery-slide').forEach(slide => {
+                slide.style.opacity = '1';
+            });
+            // Part C: Error Correction (Questions 8, 9)
+            document.querySelectorAll('.quiz-question').forEach((question, idx) => {
+                if (idx === 7 || idx === 8) {
+                    const blank = question.querySelector('.fill-blank');
+                    if (blank) {
+                        // Create input box
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.style.padding = '6px 10px';
+                        input.style.borderRadius = '8px';
+                        input.style.border = '2px solid #3498db';
+                        input.style.marginLeft = '5px';
+                        input.style.width = '260px';
+                        input.placeholder = 'พิมพ์ประโยคที่ถูกต้อง...';
+
+                        // Create check button
+                        const btn = document.createElement('button');
+                        btn.textContent = 'Answer check';
+                        btn.style.marginLeft = '10px';
+                        btn.style.padding = '6px 16px';
+                        btn.style.borderRadius = '8px';
+                        btn.style.border = 'none';
+                        btn.style.background = '#27ae60';
+                        btn.style.color = 'white';
+                        btn.style.cursor = 'pointer';
+                        btn.style.fontWeight = 'bold';
+
+                        // Create answer box
+                        const answerBox = document.createElement('div');
+                        answerBox.className = 'answer';
+                        answerBox.style.display = 'none';
+                        answerBox.style.background = '#d4edda';
+                        answerBox.style.color = '#2c3e50';
+                        answerBox.style.marginTop = '10px';
+                        answerBox.style.borderRadius = '8px';
+                        answerBox.style.padding = '10px';
+
+                        // Insert input and button
+                        blank.replaceWith(input);
+                        input.after(btn);
+
+                        // Button click event
+                        btn.addEventListener('click', function() {
+                            let userAns = input.value.trim().toLowerCase();
+                            let correct = false;
+                            if (idx === 7) { // Q8
+                                correct = userAns === 'i have known him for five years.' || userAns === 'i have known him for five years';
+                            } else if (idx === 8) { // Q9
+                                correct = userAns === 'you must complete this homework.' || userAns === 'you must complete this homework';
+                            }
+                            answerBox.style.display = 'block';
+                            if (correct) {
+                                answerBox.textContent = "✅ ถูกต้อง! เฉลย: " + quizAnswers[idx + 1];
+                            } else {
+                                answerBox.textContent = "❌ ลองใหม่ หรือดูเฉลย: " + quizAnswers[idx + 1];
+                            }
+                        });
+
+                        // Add answer box
+                        btn.after(answerBox);
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Footer Word Building Button -->
+    <footer style="background: linear-gradient(135deg, #2c3e50, #3498db); color: white; text-align: center; padding: 40px 20px; position: relative;">
+        <h3 style="margin-bottom: 15px;">🎓 Grammar Mastery Complete</h3>
+        <p style="font-size: 1.1em; opacity: 0.9;">Professional Educational Material Using Model Mnemonics</p>
+        <p style="margin-top: 20px; opacity: 0.7;">© 2024 English Grammar Excellence - Comprehensive Learning Guide</p>
+        <a href="model1.html" class="word-building-btn" title="Go to Word Building">
+            <span class="icon">🧩</span>
+            Word building
+        </a>
+    </footer>
+</body>
+</html>

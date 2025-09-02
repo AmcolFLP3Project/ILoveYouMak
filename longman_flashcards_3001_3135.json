@@ -1,0 +1,542 @@
+[
+  {
+    "word": "visual",
+    "definition": ["เกี่ยวกับสายตา", "เกี่ยวกับการมองเห็น"]
+  },
+  {
+    "word": "vital",
+    "definition": ["จำเป็นสำหรับชีวิต", "สำคัญยิ่ง"]
+  },
+  {
+    "word": "voice",
+    "definition": ["เสียง", "เสียงพูด"]
+  },
+  {
+    "word": "volume",
+    "definition": ["เล่ม (หนังสือ)", "ฉบับ", "ความดังของเสียง", "ปริมาตร"]
+  },
+  {
+    "word": "voluntary",
+    "definition": ["อาสาสมัคร", "โดยสมัครใจ"]
+  },
+  {
+    "word": "vote",
+    "definition": ["การลงคะแนนเสียง", "ลงคะแนน"]
+  },
+  {
+    "word": "vulnerable",
+    "definition": ["เปราะ", "ไม่มั่นคง", "ทำให้บาดเจ็บได้ง่าย", "อ่อนแอ"]
+  },
+  {
+    "word": "wage",
+    "definition": ["ค่าจ้าง"]
+  },
+  {
+    "word": "wait",
+    "definition": ["รอคอย"]
+  },
+  {
+    "word": "wake",
+    "definition": ["ปลุก", "ตื่น"]
+  },
+  {
+    "word": "walk",
+    "definition": ["เดิน"]
+  },
+  {
+    "word": "wall",
+    "definition": ["กำแพง", "ผนัง"]
+  },
+  {
+    "word": "wander",
+    "definition": ["เดินเตร็ดเตร่", "ท่องเที่ยวไปโดยไม่มีจุดหมาย"]
+  },
+  {
+    "word": "want",
+    "definition": ["ต้องการ"]
+  },
+  {
+    "word": "war",
+    "definition": ["สงคราม"]
+  },
+  {
+    "word": "ward",
+    "definition": ["แผนกในโรงพยาบาล", "หอผู้ป่วย"]
+  },
+  {
+    "word": "wardrobe",
+    "definition": ["ตู้เสื้อผ้า"]
+  },
+  {
+    "word": "warm",
+    "definition": ["อุ่น"]
+  },
+  {
+    "word": "warn",
+    "definition": ["เตือน"]
+  },
+  {
+    "word": "warning",
+    "definition": ["คำเตือน"]
+  },
+  {
+    "word": "wash",
+    "definition": ["ซักล้าง", "ชะล้าง", "ล้าง"]
+  },
+  {
+    "word": "washing",
+    "definition": ["การซัก", "การล้าง", "การชะล้าง"]
+  },
+  {
+    "word": "waste",
+    "definition": ["การสูญเปล่า", "สิ้นเปลือง", "ของเสีย"]
+  },
+  {
+    "word": "watch",
+    "definition": ["ดู", "นาฬิกาข้อมือ", "เฝ้าดู"]
+  },
+  {
+    "word": "water",
+    "definition": ["น้ำ", "รดน้ำ"]
+  },
+  {
+    "word": "wave",
+    "definition": ["คลื่น", "โบกมือ"]
+  },
+  {
+    "word": "way",
+    "definition": ["ทาง", "เส้นทาง", "วิธี"]
+  },
+  {
+    "word": "we",
+    "definition": ["เรา", "พวกเรา"]
+  },
+  {
+    "word": "weak",
+    "definition": ["อ่อนแอ", "อ่อนลง", "จาง"]
+  },
+  {
+    "word": "weakness",
+    "definition": ["ความอ่อนแอ", "จุดอ่อน"]
+  },
+  {
+    "word": "wealth",
+    "definition": ["ความร่ำรวย", "ความมั่งคั่ง", "ทรัพย์สมบัติ"]
+  },
+  {
+    "word": "weapon",
+    "definition": ["อาวุธ"]
+  },
+  {
+    "word": "wear",
+    "definition": ["สวมใส่", "ทำให้สึก"]
+  },
+  {
+    "word": "weather",
+    "definition": ["สภาพอากาศ", "อากาศ"]
+  },
+  {
+    "word": "web",
+    "definition": ["ใยแมงมุม", "เว็บ (อินเทอร์เน็ต)"]
+  },
+  {
+    "word": "website",
+    "definition": ["เว็บไซต์"]
+  },
+  {
+    "word": "wedding",
+    "definition": ["งานแต่งงาน"]
+  },
+  {
+    "word": "week",
+    "definition": ["สัปดาห์", "อาทิตย์"]
+  },
+  {
+    "word": "weekend",
+    "definition": ["วันสุดสัปดาห์"]
+  },
+  {
+    "word": "weekly",
+    "definition": ["รายสัปดาห์"]
+  },
+  {
+    "word": "weigh",
+    "definition": ["ชั่งน้ำหนัก", "ยก", "หนัก"]
+  },
+  {
+    "word": "weight",
+    "definition": ["น้ำหนัก", "ภาระ", "ความสำคัญ"]
+  },
+  {
+    "word": "weird",
+    "definition": ["แปลกประหลาด"]
+  },
+  {
+    "word": "welcome",
+    "definition": ["ยินดีต้อนรับ", "ต้อนรับ"]
+  },
+  {
+    "word": "welfare",
+    "definition": ["สวัสดิการ", "สวัสดิภาพ"]
+  },
+  {
+    "word": "well",
+    "definition": ["ดี", "บ่อน้ำ", "สบายดี"]
+  },
+  {
+    "word": "west",
+    "definition": ["ตะวันตก", "ทิศตะวันตก"]
+  },
+  {
+    "word": "western",
+    "definition": ["ซึ่งอยู่ทางทิศตะวันตก", "ของชาวตะวันตก"]
+  },
+  {
+    "word": "wet",
+    "definition": ["เปียก"]
+  },
+  {
+    "word": "what",
+    "definition": ["อะไร"]
+  },
+  {
+    "word": "whatever",
+    "definition": ["อะไรก็ตาม", "อย่างใดก็ตาม"]
+  },
+  {
+    "word": "whatsoever",
+    "definition": ["ไม่ว่าอะไรก็ตาม", "ใดๆ เลย"]
+  },
+  {
+    "word": "wheel",
+    "definition": ["ล้อ"]
+  },
+  {
+    "word": "when",
+    "definition": ["เมื่อไหร่", "เมื่อ"]
+  },
+  {
+    "word": "whenever",
+    "definition": ["เมื่อไหร่ก็ตาม"]
+  },
+  {
+    "word": "where",
+    "definition": ["ที่ไหน"]
+  },
+  {
+    "word": "whereas",
+    "definition": ["ในทางตรงกันข้าม", "ในขณะที่"]
+  },
+  {
+    "word": "wherever",
+    "definition": ["ที่ไหนก็ตาม", "ไม่ว่าที่ใด"]
+  },
+  {
+    "word": "whether",
+    "definition": ["หรือไม่", "ว่า...หรือ..."]
+  },
+  {
+    "word": "which",
+    "definition": ["อันไหน", "ที่ซึ่ง"]
+  },
+  {
+    "word": "while",
+    "definition": ["ในขณะที่", "ถึงแม้ว่า"]
+  },
+  {
+    "word": "whisky",
+    "definition": ["เหล้าวิสกี้"]
+  },
+  {
+    "word": "whisper",
+    "definition": ["กระซิบ"]
+  },
+  {
+    "word": "white",
+    "definition": ["ขาว", "สีขาว"]
+  },
+  {
+    "word": "who",
+    "definition": ["ใคร"]
+  },
+  {
+    "word": "whoever",
+    "definition": ["ใครก็ตาม", "ผู้ใดก็ตาม"]
+  },
+  {
+    "word": "whole",
+    "definition": ["ทั้งหมด", "ทั้งสิ้น"]
+  },
+  {
+    "word": "whom",
+    "definition": ["ผู้ซึ่ง (รูปกรรม)"]
+  },
+  {
+    "word": "whose",
+    "definition": ["ของใคร"]
+  },
+  {
+    "word": "why",
+    "definition": ["ทำไม"]
+  },
+  {
+    "word": "wicked",
+    "definition": ["ชั่วช้า", "เลวทราม"]
+  },
+  {
+    "word": "wide",
+    "definition": ["กว้าง"]
+  },
+  {
+    "word": "widely",
+    "definition": ["อย่างกว้างขวาง"]
+  },
+  {
+    "word": "widespread",
+    "definition": ["แพร่หลาย", "แพร่ไปทั่ว"]
+  },
+  {
+    "word": "wife",
+    "definition": ["ภรรยา"]
+  },
+  {
+    "word": "wild",
+    "definition": ["ไม่เชื่อง", "ดุร้าย", "ซึ่งมาจากป่า", "ป่า"]
+  },
+  {
+    "word": "will",
+    "definition": ["จะ", "พินัยกรรม", "ความประสงค์"]
+  },
+  {
+    "word": "willing",
+    "definition": ["เต็มใจ", "ตั้งใจ", "มีเจตนา", "สมัครใจ"]
+  },
+  {
+    "word": "win",
+    "definition": ["ชนะ"]
+  },
+  {
+    "word": "wind",
+    "definition": ["ลม", "ไขลาน"]
+  },
+  {
+    "word": "window",
+    "definition": ["หน้าต่าง"]
+  },
+  {
+    "word": "windy",
+    "definition": ["ที่มีลม", "ที่ลมแรง"]
+  },
+  {
+    "word": "wine",
+    "definition": ["เหล้าองุ่น", "ไวน์"]
+  },
+  {
+    "word": "wing",
+    "definition": ["ปีก", "ฝ่าย"]
+  },
+  {
+    "word": "winner",
+    "definition": ["ผู้ชนะ"]
+  },
+  {
+    "word": "winter",
+    "definition": ["ฤดูหนาว"]
+  },
+  {
+    "word": "wipe",
+    "definition": ["เช็ด"]
+  },
+  {
+    "word": "wire",
+    "definition": ["ลวด", "สายไฟ"]
+  },
+  {
+    "word": "wise",
+    "definition": ["ฉลาด", "มีเหตุผล"]
+  },
+  {
+    "word": "wish",
+    "definition": ["ปรารถนา", "คำอธิษฐาน", "ความปรารถนา"]
+  },
+  {
+    "word": "with",
+    "definition": ["ด้วย", "กับ"]
+  },
+  {
+    "word": "withdraw",
+    "definition": ["ถอนเงิน", "เก็บคืน", "เอากลับ", "ถอนตัว"]
+  },
+  {
+    "word": "within",
+    "definition": ["ภายใน", "ตามที่กำหนด"]
+  },
+  {
+    "word": "without",
+    "definition": ["โดยปราศจาก"]
+  },
+  {
+    "word": "witness",
+    "definition": ["พยาน", "เป็นพยาน"]
+  },
+  {
+    "word": "woman",
+    "definition": ["ผู้หญิง"]
+  },
+  {
+    "word": "wonder",
+    "definition": ["ความพิศวงสงสัย", "ประหลาดใจ", "สงสัย"]
+  },
+  {
+    "word": "wonderful",
+    "definition": ["ยอดเยี่ยม", "มหัศจรรย์"]
+  },
+  {
+    "word": "wood",
+    "definition": ["ไม้"]
+  },
+  {
+    "word": "wooden",
+    "definition": ["ทำด้วยไม้", "ที่ทำจากไม้"]
+  },
+  {
+    "word": "wool",
+    "definition": ["ขนปุย", "ขนแกะ", "ผ้าขนสัตว์"]
+  },
+  {
+    "word": "word",
+    "definition": ["คำ"]
+  },
+  {
+    "word": "work",
+    "definition": ["ทำงาน", "งาน", "ได้ผล"]
+  },
+  {
+    "word": "worker",
+    "definition": ["คนงาน"]
+  },
+  {
+    "word": "working",
+    "definition": ["ซึ่งใช้การได้", "ซึ่งมีงานทำ", "เกี่ยวกับการทำงาน"]
+  },
+  {
+    "word": "workshop",
+    "definition": ["โรงฝึกงาน", "การประชุมเชิงปฏิบัติการ"]
+  },
+  {
+    "word": "world",
+    "definition": ["โลก"]
+  },
+  {
+    "word": "worried",
+    "definition": ["กังวล"]
+  },
+  {
+    "word": "worry",
+    "definition": ["วิตกกังวล", "หนักใจ"]
+  },
+  {
+    "word": "worrying",
+    "definition": ["น่าหนักใจ", "น่าเป็นห่วง"]
+  },
+  {
+    "word": "worse",
+    "definition": ["แย่ลง"]
+  },
+  {
+    "word": "worth",
+    "definition": ["คุณค่า", "คู่ควร", "มีค่า"]
+  },
+  {
+    "word": "would",
+    "definition": ["จะ (รูปอดีตของ will)"]
+  },
+  {
+    "word": "wound",
+    "definition": ["แผล", "บาดแผล"]
+  },
+  {
+    "word": "wrap",
+    "definition": ["ห่อ", "พันรอบ"]
+  },
+  {
+    "word": "write",
+    "definition": ["เขียน"]
+  },
+  {
+    "word": "writer",
+    "definition": ["ผู้เขียน", "นักเขียน"]
+  },
+  {
+    "word": "writing",
+    "definition": ["การเขียน", "งานเขียน"]
+  },
+  {
+    "word": "wrong",
+    "definition": ["ผิด", "ไม่ถูกต้อง"]
+  },
+  {
+    "word": "yard",
+    "definition": ["หลา", "สนาม", "คอกปศุสัตว์"]
+  },
+  {
+    "word": "yeah",
+    "definition": ["ใช่", "จ้ะ (ภาษาพูด)"]
+  },
+  {
+    "word": "year",
+    "definition": ["ปี"]
+  },
+  {
+    "word": "yellow",
+    "definition": ["สีเหลือง"]
+  },
+  {
+    "word": "yep",
+    "definition": ["ใช่แล้ว (ภาษาพูด)"]
+  },
+  {
+    "word": "yes",
+    "definition": ["ใช่", "ครับ/ค่ะ"]
+  },
+  {
+    "word": "yesterday",
+    "definition": ["วานนี้", "เมื่อวาน"]
+  },
+  {
+    "word": "yet",
+    "definition": ["ยัง", "แต่"]
+  },
+  {
+    "word": "you",
+    "definition": ["คุณ", "ท่าน", "เธอ"]
+  },
+  {
+    "word": "young",
+    "definition": ["เยาว์วัย", "คนหนุ่มสาว", "หนุ่ม", "สาว"]
+  },
+  {
+    "word": "youngster",
+    "definition": ["เด็กหนุ่มสาว", "ลูกสัตว์"]
+  },
+  {
+    "word": "your",
+    "definition": ["ของคุณ"]
+  },
+  {
+    "word": "yours",
+    "definition": ["ของคุณ"]
+  },
+  {
+    "word": "yourself",
+    "definition": ["ด้วยตัวคุณเอง"]
+  },
+  {
+    "word": "youth",
+    "definition": ["ความเป็นหนุ่มเป็นสาว", "วัยหนุ่มวัยสาว", "เยาวชน"]
+  },
+  {
+    "word": "zone",
+    "definition": ["เขต", "พื้นที่"]
+  }
+]

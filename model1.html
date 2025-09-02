@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Word Building & Vocabulary Expansion - Complete Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Kanit', sans-serif;
+            background: 
+                linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Header */
+        .header {
+            background: 
+                linear-gradient(135deg, 
+                    rgba(102, 126, 234, 0.9), 
+                    rgba(118, 75, 162, 0.9),
+                    rgba(240, 147, 251, 0.9)
+                );
+            color: white;
+            text-align: center;
+            padding: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(255,255,255,0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+            animation: floatingDots 20s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floatingDots {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+            100% { 
+                text-shadow: 
+                    2px 2px 10px rgba(0,0,0,0.3),
+                    0 0 30px rgba(255,255,255,0.5);
+            }
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            margin: 20px auto;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .section-intro {
+            background: rgba(248, 250, 252, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .section-intro h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .section-intro p {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        /* Mind Map Styles */
+        .mind-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .central-node {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px 50px;
+            border-radius: 50px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            box-shadow: 
+                0 15px 40px rgba(102, 126, 234, 0.4),
+                0 0 0 3px rgba(255, 255, 255, 0.3);
+            position: relative;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .branches-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .branch {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            min-width: 350px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .branch:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .branch-title {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .sub-branches {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sub-branch {
+            background: rgba(248, 250, 252, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #f093fb;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .sub-branch:hover {
+            background: rgba(240, 147, 251, 0.1);
+            transform: translateX(5px);
+            border-left-width: 6px;
+        }
+
+        .sub-branch-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .sub-branch-example {
+            font-style: italic;
+            color: #4a5568;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .grammar-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grammar-table th {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .grammar-table td {
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+            vertical-align: top;
+        }
+
+        .grammar-table tr:nth-child(even) {
+            background: rgba(248, 250, 252, 0.5);
+        }
+
+        .grammar-table tr:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        .word-category {
+            font-weight: 700;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: -20px -15px 15px -15px;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .example {
+            background: linear-gradient(135deg, rgba(219, 234, 254, 0.9), rgba(191, 219, 254, 0.9));
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 3px 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .usage {
+            background: linear-gradient(135deg, rgba(220, 252, 231, 0.9), rgba(187, 247, 208, 0.9));
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            margin: 10px 0;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            box-shadow: 0 3px 10px rgba(34, 197, 94, 0.2);
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 30px;
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .word-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .word-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+
+        .word-card-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .word-card-example {
+            font-style: italic;
+            color: #4a5568;
+            background: rgba(248, 250, 252, 0.8);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .word-card-usage {
+            font-size: 0.9rem;
+            color: #059669;
+            font-weight: 600;
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            background: 
+                linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.8));
+            padding: 50px 30px;
+            border-top: 3px solid #667eea;
+        }
+
+        .quiz-question {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .quiz-question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .question-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: rgba(248, 250, 252, 0.8);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .option:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .fill-blank {
+            background: rgba(248, 250, 252, 0.9);
+            border: 2px solid #667eea;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+
+        .answer-key {
+            background: linear-gradient(135deg, #059669, #047857);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 15px 40px rgba(5, 150, 105, 0.3);
+        }
+
+        .answer-key h3, .answer-key h4 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .answer {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 500;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            box-shadow: 0 15px 40px rgba(240, 147, 251, 0.4);
+            animation: highlightPulse 4s infinite alternate;
+        }
+
+        @keyframes highlightPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.02); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 20px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-section {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .branches-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .branch {
+                min-width: 280px;
+            }
+
+            .word-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        .footer-home {
+            width: 100%;
+            position: relative;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 0 0 0;
+            margin-top: 40px;
+        }
+
+        .home-navigation {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            z-index: 10;
+        }
+
+        .home-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Academic Word Building & Vocabulary Expansion</h1>
+            <p>Complete Guide to Word Forms & Academic Word List Mastery</p>
+        </header>
+
+        <!-- Word Building Mind Map -->
+        <section class="content-section">
+            <h2 class="section-title">🧠 Word Building Mind Map</h2>
+            <div class="section-intro">
+                <h3>Systematic Vocabulary Expansion Through Word Formation</h3>
+                <p>Master the art of word building through systematic patterns. Understanding prefixes, suffixes, and root words allows you to expand your vocabulary exponentially and decode unfamiliar words in academic contexts.</p>
+            </div>
+
+            <div class="mind-map">
+                <div class="central-node">Word Building Mastery</div>
+                
+                <div class="branches-container">
+                    <div class="branch">
+                        <div class="branch-title">PREFIXES</div>
+                        <div class="sub-branches">
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">UN- (not, opposite)</div>
+                                <div class="sub-branch-example">unchanged, unclear, unable, unusual, unfair</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Academic usage:</strong> unconventional, unprecedented, unbiased, undetermined
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">RE- (again, back)</div>
+                                <div class="sub-branch-example">research, respond, require, represent</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Academic usage:</strong> reevaluate, reconstruct, reinterpret, redistribute
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">PRE- (before)</div>
+                                <div class="sub-branch-example">predict, prevent, prepare, precise</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Academic usage:</strong> predetermined, prerequisite, preliminary, presumption
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">DE- (down, away, reverse)</div>
+                                <div class="sub-branch-example">define, derive, design, demonstrate</div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Academic usage:</strong> deduction, decontextualize, deconstruct, depreciate
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="branch">
+                        <div class="branch-title">SUFFIXES</div>
+                        <div class="sub-branches">
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">NOUN SUFFIXES</div>
+                                <div class="sub-branch-example">
+                                    <strong>-tion/-sion:</strong> creation, conclusion, analysis, revision<br>
+                                    <strong>-ment:</strong> assessment, establishment, development<br>
+                                    <strong>-ity/-ty:</strong> identity, variety, complexity, security<br>
+                                    <strong>-ance/-ence:</strong> significance, evidence, occurrence
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">ADJECTIVE SUFFIXES</div>
+                                <div class="sub-branch-example">
+                                    <strong>-al:</strong> functional, structural, cultural, ethical<br>
+                                    <strong>-ive:</strong> creative, objective, distinctive, alternative<br>
+                                    <strong>-ic:</strong> economic, academic, systematic, specific<br>
+                                    <strong>-able/-ible:</strong> available, accessible, flexible, visible
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">VERB SUFFIXES</div>
+                                <div class="sub-branch-example">
+                                    <strong>-ize/-ise:</strong> analyze, categorize, emphasize, summarize<br>
+                                    <strong>-ify:</strong> classify, identify, specify, modify<br>
+                                    <strong>-ate:</strong> evaluate, estimate, indicate, generate
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="branch">
+                        <div class="branch-title">ROOT WORDS</div>
+                        <div class="sub-branches">
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">SPECT- (see, look)</div>
+                                <div class="sub-branch-example">
+                                    inspect, respect, expect, aspect, perspective, prospect, retrospective
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">STRUCT- (build)</div>
+                                <div class="sub-branch-example">
+                                    structure, construct, instruct, destruct, infrastructure, reconstruction
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">DICT- (speak, say)</div>
+                                <div class="sub-branch-example">
+                                    predict, indicate, contradict, dictate, dictionary, jurisdiction
+                                </div>
+                            </div>
+                            <div class="sub-branch">
+                                <div class="sub-branch-title">CERT- (sure, certain)</div>
+                                <div class="sub-branch-example">
+                                    certain, certificate, certify, uncertainty, ascertain
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                💡 Master Strategy: Learn one root word and unlock 6-10 related academic vocabulary words instantly!
+            </div>
+        </section>
+
+        <!-- Complete Academic Word Forms -->
+        <section class="content-section">
+            <h2 class="section-title">📚 Complete Academic Word Forms List</h2>
+            <div class="section-intro">
+                <h3>Essential Academic Word Families</h3>
+                <p>This comprehensive table shows complete word transformations for the most important academic vocabulary. Each entry includes all major word forms (noun, verb, adjective, adverb) with academic usage contexts.</p>
+            </div>
+
+            <div class="table-container">
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>BASE WORD</th>
+                            <th>NOUN FORMS</th>
+                            <th>VERB FORMS</th>
+                            <th>ADJECTIVE FORMS</th>
+                            <th>ADVERB FORMS</th>
+                            <th>ACADEMIC CONTEXT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ANALYZE</strong><br><em>to examine in detail</em></td>
+                            <td>analysis<br>analyst<br>analytics</td>
+                            <td>analyze<br>analyse (UK)</td>
+                            <td>analytical<br>analytic</td>
+                            <td>analytically</td>
+                            <td class="usage">Research methodology, data interpretation, critical thinking, statistical analysis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>APPROACH</strong><br><em>method or way</em></td>
+                            <td>approach<br>approachability</td>
+                            <td>approach</td>
+                            <td>approachable<br>approaching</td>
+                            <td>-</td>
+                            <td class="usage">Research methods, problem-solving strategies, theoretical frameworks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ASSESS</strong><br><em>to evaluate</em></td>
+                            <td>assessment<br>assessor</td>
+                            <td>assess<br>reassess</td>
+                            <td>assessable</td>
+                            <td>-</td>
+                            <td class="usage">Educational evaluation, performance measurement, quality control</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AUTHORITY</strong><br><em>power or expertise</em></td>
+                            <td>authority<br>authorization<br>author</td>
+                            <td>authorize<br>author</td>
+                            <td>authoritative<br>authorized<br>authoritarian</td>
+                            <td>authoritatively</td>
+                            <td class="usage">Legal studies, governance, expertise validation, academic sources</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BENEFIT</strong><br><em>advantage or help</em></td>
+                            <td>benefit<br>beneficiary</td>
+                            <td>benefit</td>
+                            <td>beneficial</td>
+                            <td>beneficially</td>
+                            <td class="usage">Cost-benefit analysis, welfare studies, policy evaluation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CATEGORY</strong><br><em>classification group</em></td>
+                            <td>category<br>categorization<br>categorisation</td>
+                            <td>categorize<br>categorise</td>
+                            <td>categorical<br>categorial</td>
+                            <td>categorically</td>
+                            <td class="usage">Classification systems, taxonomy, data organization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CONCEPT</strong><br><em>idea or notion</em></td>
+                            <td>concept<br>conception<br>conceptualization</td>
+                            <td>conceive<br>conceptualize</td>
+                            <td>conceptual</td>
+                            <td>conceptually</td>
+                            <td class="usage">Theoretical frameworks, idea development, abstract thinking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CONSTITUTE</strong><br><em>to form or make up</em></td>
+                            <td>constitution<br>constituent<br>constitutionality</td>
+                            <td>constitute<br>reconstitute</td>
+                            <td>constitutional<br>constitutive</td>
+                            <td>constitutionally</td>
+                            <td class="usage">Legal studies, component analysis, structural composition</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CREATE</strong><br><em>to make or produce</em></td>
+                            <td>creation<br>creator<br>creativity<br>creature</td>
+                            <td>create<br>recreate</td>
+                            <td>creative<br>recreative</td>
+                            <td>creatively</td>
+                            <td class="usage">Innovation studies, artistic development, problem-solving, design thinking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DATA</strong><br><em>information/facts</em></td>
+                            <td>data<br>database<br>datum</td>
+                            <td>-</td>
+                            <td>data-driven<br>databased</td>
+                            <td>-</td>
+                            <td class="usage">Research methodology, statistical analysis, information systems</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DEFINE</strong><br><em>to explain meaning</em></td>
+                            <td>definition<br>definiteness</td>
+                            <td>define<br>redefine</td>
+                            <td>definitive<br>definite<br>defined</td>
+                            <td>definitively<br>definitely</td>
+                            <td class="usage">Terminology clarification, concept boundaries, precise communication</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DERIVE</strong><br><em>to obtain from source</em></td>
+                            <td>derivation<br>derivative</td>
+                            <td>derive</td>
+                            <td>derivative<br>derived</td>
+                            <td>derivatively</td>
+                            <td class="usage">Etymology, mathematical functions, logical reasoning, source analysis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DISTRIBUTE</strong><br><em>to spread or share</em></td>
+                            <td>distribution<br>distributor<br>distributive</td>
+                            <td>distribute<br>redistribute</td>
+                            <td>distributive<br>distributed</td>
+                            <td>distributively</td>
+                            <td class="usage">Statistical distribution, resource allocation, supply chain management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ECONOMY</strong><br><em>financial system</em></td>
+                            <td>economy<br>economics<br>economist</td>
+                            <td>economize<br>economise</td>
+                            <td>economic<br>economical</td>
+                            <td>economically</td>
+                            <td class="usage">Financial analysis, resource management, market studies, policy development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ENVIRONMENT</strong><br><em>surroundings/context</em></td>
+                            <td>environment<br>environmentalism<br>environmentalist</td>
+                            <td>-</td>
+                            <td>environmental<br>environmentally-friendly</td>
+                            <td>environmentally</td>
+                            <td class="usage">Ecological studies, contextual analysis, sustainability research</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ESTABLISH</strong><br><em>to set up or prove</em></td>
+                            <td>establishment<br>establishement</td>
+                            <td>establish<br>reestablish</td>
+                            <td>established<br>establishable</td>
+                            <td>-</td>
+                            <td class="usage">Institution building, proof validation, foundation setting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ESTIMATE</strong><br><em>to calculate approximately</em></td>
+                            <td>estimate<br>estimation<br>estimator</td>
+                            <td>estimate<br>overestimate<br>underestimate</td>
+                            <td>estimated<br>estimable</td>
+                            <td>-</td>
+                            <td class="usage">Statistical approximation, budget planning, measurement techniques</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EVALUATE</strong><br><em>to assess value/worth</em></td>
+                            <td>evaluation<br>evaluator</td>
+                            <td>evaluate<br>reevaluate</td>
+                            <td>evaluative<br>evaluable</td>
+                            <td>evaluatively</td>
+                            <td class="usage">Performance assessment, quality measurement, critical appraisal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>EVIDENCE</strong><br><em>proof or support</em></td>
+                            <td>evidence</td>
+                            <td>evidence</td>
+                            <td>evident<br>evidential<br>evidence-based</td>
+                            <td>evidently<br>evidentially</td>
+                            <td class="usage">Research validation, legal proceedings, scientific proof</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FACTOR</strong><br><em>contributing element</em></td>
+                            <td>factor<br>factorization</td>
+                            <td>factor<br>factorize</td>
+                            <td>factorial</td>
+                            <td>factorially</td>
+                            <td class="usage">Causal analysis, mathematical operations, variable identification</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FINANCE</strong><br><em>money management</em></td>
+                            <td>finance<br>financing<br>financier</td>
+                            <td>finance<br>refinance</td>
+                            <td>financial<br>financed</td>
+                            <td>financially</td>
+                            <td class="usage">Budget management, investment analysis, economic planning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FORMULA</strong><br><em>mathematical expression</em></td>
+                            <td>formula<br>formulation<br>formulae (plural)</td>
+                            <td>formulate<br>reformulate</td>
+                            <td>formulaic<br>formulated</td>
+                            <td>-</td>
+                            <td class="usage">Mathematical modeling, systematic approaches, procedural design</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FUNCTION</strong><br><em>purpose or operation</em></td>
+                            <td>function<br>functionality<br>functioning</td>
+                            <td>function<br>malfunction</td>
+                            <td>functional<br>dysfunctional</td>
+                            <td>functionally</td>
+                            <td class="usage">Systems analysis, operational studies, practical applications</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IDENTIFY</strong><br><em>to recognize or specify</em></td>
+                            <td>identification<br>identity<br>identifier</td>
+                            <td>identify<br>misidentify</td>
+                            <td>identifiable<br>identified</td>
+                            <td>identifiably</td>
+                            <td class="usage">Pattern recognition, classification systems, problem diagnosis</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INCOME</strong><br><em>money received</em></td>
+                            <td>income</td>
+                            <td>-</td>
+                            <td>income-based<br>incoming</td>
+                            <td>-</td>
+                            <td class="usage">Economic analysis, financial planning, taxation studies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INDICATE</strong><br><em>to show or suggest</em></td>
+                            <td>indication<br>indicator<br>indicative</td>
+                            <td>indicate</td>
+                            <td>indicative<br>indicated</td>
+                            <td>indicatively</td>
+                            <td class="usage">Data interpretation, signal analysis, trend identification</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INDIVIDUAL</strong><br><em>single person/thing</em></td>
+                            <td>individual<br>individualism<br>individualist<br>individuality</td>
+                            <td>individualize<br>individualise</td>
+                            <td>individual<br>individualistic</td>
+                            <td>individually</td>
+                            <td class="usage">Personal analysis, customization, demographic studies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INTERPRET</strong><br><em>to explain meaning</em></td>
+                            <td>interpretation<br>interpreter</td>
+                            <td>interpret<br>reinterpret<br>misinterpret</td>
+                            <td>interpretive<br>interpretative</td>
+                            <td>interpretively</td>
+                            <td class="usage">Data analysis, textual analysis, meaning construction</td>
+                        </tr>
+                        <tr>
+                            <td><strong>INVOLVE</strong><br><em>to include or engage</em></td>
+                            <td>involvement</td>
+                            <td>involve<br>uninvolve</td>
+                            <td>involved<br>involving</td>
+                            <td>-</td>
+                            <td class="usage">Participation studies, engagement analysis, process inclusion</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ISSUE</strong><br><em>problem or topic</em></td>
+                            <td>issue<br>issuance</td>
+                            <td>issue<br>reissue</td>
+                            <td>issued</td>
+                            <td>-</td>
+                            <td class="usage">Problem identification, policy development, publication</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LABOR/LABOUR</strong><br><em>work or workforce</em></td>
+                            <td>labor/labour<br>laborer/labourer</td>
+                            <td>labor/labour</td>
+                            <td>laborious</td>
+                            <td>laboriously</td>
+                            <td class="usage">Workforce analysis, employment studies, economic productivity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LEGAL</strong><br><em>relating to law</em></td>
+                            <td>legality<br>legalization</td>
+                            <td>legalize<br>legalise</td>
+                            <td>legal<br>illegal<br>legalistic</td>
+                            <td>legally<br>illegally</td>
+                            <td class="usage">Jurisprudence, compliance analysis, regulatory studies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MAJOR</strong><br><em>important or main</em></td>
+                            <td>majority<br>major</td>
+                            <td>major</td>
+                            <td>major<br>majority</td>
+                            <td>majorly</td>
+                            <td class="usage">Significance analysis, priority identification, demographic studies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>METHOD</strong><br><em>systematic approach</em></td>
+                            <td>method<br>methodology<br>methodologist</td>
+                            <td>-</td>
+                            <td>methodical<br>methodological</td>
+                            <td>methodically<br>methodologically</td>
+                            <td class="usage">Research design, systematic procedures, analytical frameworks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>OCCUR</strong><br><em>to happen or exist</em></td>
+                            <td>occurrence<br>occurence</td>
+                            <td>occur<br>reoccur</td>
+                            <td>occurring<br>occurred</td>
+                            <td>-</td>
+                            <td class="usage">Event analysis, frequency studies, pattern identification</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PERCENT</strong><br><em>proportion per hundred</em></td>
+                            <td>percent<br>percentage<br>percentile</td>
+                            <td>-</td>
+                            <td>percentile</td>
+                            <td>-</td>
+                            <td class="usage">Statistical analysis, proportion calculation, comparative studies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PERIOD</strong><br><em>time duration</em></td>
+                            <td>period<br>periodicity</td>
+                            <td>-</td>
+                            <td>periodic<br>periodical</td>
+                            <td>periodically</td>
+                            <td class="usage">Temporal analysis, cyclical studies, historical periodization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>POLICY</strong><br><em>course of action</em></td>
+                            <td>policy<br>policymaker</td>
+                            <td>-</td>
+                            <td>policy-based<br>policy-oriented</td>
+                            <td>-</td>
+                            <td class="usage">Governance studies, strategic planning, regulatory frameworks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PRINCIPLE</strong><br><em>fundamental rule</em></td>
+                            <td>principle<br>principality</td>
+                            <td>-</td>
+                            <td>principled<br>principal</td>
+                            <td>principally</td>
+                            <td class="usage">Theoretical foundations, ethical frameworks, fundamental concepts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PROCEED</strong><br><em>to continue or advance</em></td>
+                            <td>procedure<br>process<br>processing</td>
+                            <td>proceed<br>process</td>
+                            <td>procedural<br>processed</td>
+                            <td>procedurally</td>
+                            <td class="usage">Sequential analysis, operational procedures, systematic progression</td>
+                        </tr>
+                        <tr>
+                            <td><strong>REQUIRE</strong><br><em>to need or demand</em></td>
+                            <td>requirement<br>requisite<br>requisition</td>
+                            <td>require<br>requisition</td>
+                            <td>required<br>requisite</td>
+                            <td>-</td>
+                            <td class="usage">Needs analysis, specification development, compliance standards</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RESEARCH</strong><br><em>systematic investigation</em></td>
+                            <td>research<br>researcher</td>
+                            <td>research</td>
+                            <td>research-based<br>research-oriented</td>
+                            <td>-</td>
+                            <td class="usage">Academic inquiry, scientific investigation, knowledge development</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RESPOND</strong><br><em>to react or answer</em></td>
+                            <td>response<br>responsibility<br>respondent</td>
+                            <td>respond</td>
+                            <td>responsive<br>responsible</td>
+                            <td>responsively<br>responsibly</td>
+                            <td class="usage">Communication analysis, reaction studies, accountability frameworks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ROLE</strong><br><em>function or position</em></td>
+                            <td>role</td>
+                            <td>-</td>
+                            <td>role-based<br>role-specific</td>
+                            <td>-</td>
+                            <td class="usage">Organizational analysis, functional studies, social positioning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SECTION</strong><br><em>distinct part</em></td>
+                            <td>section<br>sectioning<br>sector</td>
+                            <td>section</td>
+                            <td>sectional<br>sectorial</td>
+                            <td>sectionally</td>
+                            <td class="usage">Structural analysis, organizational division, categorical separation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SIGNIFICANT</strong><br><em>important or meaningful</em></td>
+                            <td>significance<br>signification</td>
+                            <td>signify</td>
+                            <td>significant<br>insignificant</td>
+                            <td>significantly<br>insignificantly</td>
+                            <td class="usage">Statistical significance, importance analysis, meaning studies</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SIMILAR</strong><br><em>alike or comparable</em></td>
+                            <td>similarity</td>
+                            <td>-</td>
+                            <td>similar<br>dissimilar</td>
+                            <td>similarly</td>
+                            <td class="usage">Comparative analysis, pattern recognition, analogical reasoning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SOURCE</strong><br><em>origin or reference</em></td>
+                            <td>source<br>sourcing</td>
+                            <td>source<br>outsource</td>
+                            <td>sourced<br>source-based</td>
+                            <td>-</td>
+                            <td class="usage">Reference validation, origin analysis, supply chain management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SPECIFIC</strong><br><em>particular or exact</em></td>
+                            <td>specification<br>specificity</td>
+                            <td>specify</td>
+                            <td>specific<br>specified</td>
+                            <td>specifically</td>
+                            <td class="usage">Precision analysis, detailed requirements, exact definitions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>STRUCTURE</strong><br><em>organization or framework</em></td>
+                            <td>structure<br>structuring<br>structuralism</td>
+                            <td>structure<br>restructure</td>
+                            <td>structural<br>structured</td>
+                            <td>structurally</td>
+                            <td class="usage">Organizational analysis, framework development, systematic design</td>
+                        </tr>
+                        <tr>
+                            <td><strong>THEORY</strong><br><em>systematic explanation</em></td>
+                            <td>theory<br>theorist<br>theorization</td>
+                            <td>theorize<br>theorise</td>
+                            <td>theoretical<br>theoretic</td>
+                            <td>theoretically</td>
+                            <td class="usage">Academic theories, hypothesis development, conceptual frameworks</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VARIABLE</strong><br><em>changeable factor</em></td>
+                            <td>variable<br>variation<br>variance<br>variety</td>
+                            <td>vary<br>variate</td>
+                            <td>variable<br>varied<br>various</td>
+                            <td>variably<br>variously</td>
+                            <td class="usage">Statistics, research variables, data analysis, mathematical functions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+
+        <section class="quiz-section">
+            <h2 class="section-title">🧩 Interactive Word Building Quiz</h2>
+            <div class="section-intro">
+                <h3>Test Your Word Formation Skills</h3>
+                <p>Challenge yourself with these word building exercises covering prefixes, suffixes, root words, and complete word family transformations.</p>
+            </div>
+
+            <div id="quiz-questions"></div>
+
+            <!-- Fill in the Blank Section -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; font-size: 2rem; color: #2d3748; margin-bottom: 40px;">📝 Fill in the Blank Exercises</h3>
+                <div id="fill-blank-questions"></div>
+            </div>
+        </section>
+
+        <script>
+        // Multiple choice questions data
+        const mcQuestions = [
+            {
+                number: 1,
+                text: 'Choose the correct word form to complete the sentence:',
+                sentence: '"The researcher conducted a thorough <span class=\"fill-blank\">_______</span> of the data to identify patterns."',
+                options: ['A) analytical', 'B) analysis', 'C) analyze', 'D) analytically'],
+                answer: 1,
+                explanation: 'Need a noun to complete "conducted a thorough ___". "Analysis" is the noun form of "analyze."'
+            },
+            {
+                number: 2,
+                text: 'What is the adjective form of "economy"?',
+                options: ['A) economical', 'B) economize', 'C) economist', 'D) economically'],
+                answer: 0,
+                explanation: '"Economical" means cost-effective or thrifty. "Economic" relates to the economy as a system.'
+            },
+            {
+                number: 3,
+                text: 'Fill in the blank with the correct prefix:',
+                sentence: '"The study aims to <span class=\"fill-blank\">____construct</span> traditional theories about learning."',
+                options: ['A) de-', 'B) re-', 'C) pre-', 'D) un-'],
+                answer: 1,
+                explanation: '"Reconstruct" means to build again or rebuild theories with new understanding.'
+            },
+            {
+                number: 4,
+                text: 'Which word family does NOT belong with the root "STRUCT" (build)?',
+                options: ['A) infrastructure', 'B) instruction', 'C) destruction', 'D) distraction'],
+                answer: 3,
+                explanation: '"Distraction" comes from "tract" (pull/draw), not "struct" (build). The others all relate to building/structure.'
+            },
+            {
+                number: 5,
+                text: 'Transform the word "SIGNIFICANT" into its noun form:',
+                options: ['A) significantly', 'B) signification', 'C) significance', 'D) signify'],
+                answer: 2,
+                explanation: 'This is the standard noun form. "Signification" exists but is less commonly used in academic writing.'
+            },
+            {
+                number: 6,
+                text: 'Complete the sentence with the correct word form:',
+                sentence: '"The committee will <span class=\"fill-blank\">_______</span> the proposal next week."',
+                options: ['A) evaluation', 'B) evaluate', 'C) evaluative', 'D) evaluatively'],
+                answer: 1,
+                explanation: 'Need the verb form after "will." "The committee will evaluate" is correct future tense.'
+            },
+            {
+                number: 7,
+                text: 'Which suffix typically creates ADJECTIVES?',
+                options: ['A) -tion', 'B) -ment', 'C) -ive', 'D) -ize'],
+                answer: 2,
+                explanation: 'The suffix "-ive" creates adjectives (creative, objective, distinctive). Others create nouns or verbs.'
+            },
+            {
+                number: 8,
+                text: 'What is the adverb form of "method"?',
+                options: ['A) methodical', 'B) methodology', 'C) methodically', 'D) methodize'],
+                answer: 2,
+                explanation: 'Adverbs typically end in "-ly." "Methodically" means "in a systematic way."'
+            },
+            {
+                number: 9,
+                text: 'Choose the word that completes the academic sentence:',
+                sentence: '"The research findings <span class=\"fill-blank\">_______</span> a strong correlation between variables."',
+                options: ['A) indication', 'B) indicate', 'C) indicative', 'D) indicator'],
+                answer: 1,
+                explanation: 'Need the verb form. "The findings indicate" shows what the research demonstrates.'
+            },
+            {
+                number: 10,
+                text: 'Which prefix means "not" or "opposite"?',
+                options: ['A) re-', 'B) pre-', 'C) de-', 'D) un-'],
+                answer: 3,
+                explanation: '"Un-" is the most common prefix meaning "not" (unclear, unable, unfair).'
+            }
+        ];
+
+        // Fill in the blank questions data
+        const fillQuestions = [
+            {
+                number: 1,
+                sentence: 'The students need to <input type="text" class="fill-input" id="fill1"> their essays before submission.',
+                wordBank: 'analysis, analyze, analytical, analytically',
+                answer: 'analyze',
+                explanation: 'Need the verb form after "need to." Students need to analyze their essays.'
+            },
+            {
+                number: 2,
+                sentence: 'The <input type="text" class="fill-input" id="fill2"> of the new policy was very positive.',
+                wordBank: 'respond, response, responsible, responsibly',
+                answer: 'response',
+                explanation: 'Need a noun after "The _____ of the policy." Response is the noun form.'
+            },
+            {
+                number: 3,
+                sentence: 'It is <input type="text" class="fill-input" id="fill3"> to follow the research methodology carefully.',
+                wordBank: 'significance, significant, significantly, signify',
+                answer: 'significant',
+                explanation: 'Need an adjective after "It is _____." Significant means important.'
+            },
+            {
+                number: 4,
+                sentence: 'The research team will <input type="text" class="fill-input" id="fill4"> the experiment next month.',
+                wordBank: 'establishment, establish, established, establishing',
+                answer: 'establish',
+                explanation: 'Need the base verb form after "will." Future tense: will establish.'
+            },
+            {
+                number: 5,
+                sentence: 'The data shows a <input type="text" class="fill-input" id="fill5"> increase in student performance.',
+                wordBank: 'significance, significant, significantly, signify',
+                answer: 'significant',
+                explanation: 'Need an adjective to describe "increase." A significant increase.'
+            },
+            {
+                number: 6,
+                sentence: 'The <input type="text" class="fill-input" id="fill6"> of the survey took three months to complete.',
+                wordBank: 'analysis, analyze, analytical, analytically',
+                answer: 'analysis',
+                explanation: 'Need a noun after "The _____ of the survey." Analysis is the noun form.'
+            },
+            {
+                number: 7,
+                sentence: 'Students must <input type="text" class="fill-input" id="fill7"> all the requirements for graduation.',
+                wordBank: 'requirement, require, required, requiring',
+                answer: 'require',
+                explanation: 'Need the base verb form after "must." Students must require = Students must meet/need.'
+            },
+            {
+                number: 8,
+                sentence: 'The professor used a very <input type="text" class="fill-input" id="fill8"> approach to teaching.',
+                wordBank: 'method, methodical, methodically, methodology',
+                answer: 'methodical',
+                explanation: 'Need an adjective to describe "approach." A methodical approach means systematic.'
+            }
+        ];
+
+        // Render multiple choice questions
+        const quizDiv = document.getElementById('quiz-questions');
+        mcQuestions.forEach((q, idx) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'quiz-question';
+            qDiv.innerHTML = `
+                <div class="question-number">Question ${q.number}</div>
+                <div class="question-text">${q.text}</div>
+                ${q.sentence ? `<p style='margin: 20px 0; font-size: 1.1rem; color: #2d3748;'>${q.sentence}</p>` : ''}
+                <div class="options" id="mc-options-${idx}">
+                    ${q.options.map((opt, i) => `<div class="option" data-idx="${i}" data-q="${idx}">${opt}</div>`).join('')}
+                </div>
+                <div class="mc-feedback" id="mc-feedback-${idx}" style="margin-top:15px;"></div>
+            `;
+            quizDiv.appendChild(qDiv);
+        });
+
+        // Add click event for MC options
+        mcQuestions.forEach((q, idx) => {
+            const optionsDiv = document.getElementById(`mc-options-${idx}`);
+            optionsDiv.querySelectorAll('.option').forEach(opt => {
+                opt.addEventListener('click', function() {
+                    const selected = parseInt(this.getAttribute('data-idx'));
+                    const feedbackDiv = document.getElementById(`mc-feedback-${idx}`);
+                    if (selected === q.answer) {
+                        feedbackDiv.innerHTML = `<span style='color:green;font-weight:600;'>✔ ถูกต้อง! ${q.options[selected].replace(/^[A-D]\) /, '')}</span><br><span style='color:#2d3748;'>${q.explanation}</span>`;
+                    } else {
+                        feedbackDiv.innerHTML = `<span style='color:red;font-weight:600;'>✖ ไม่ถูกต้อง</span><br><span style='color:#2d3748;'>คำตอบที่ถูกต้องคือ <b>${q.options[q.answer].replace(/^[A-D]\) /, '')}</b><br>${q.explanation}</span>`;
+                    }
+                    // Highlight selected
+                    optionsDiv.querySelectorAll('.option').forEach(o => o.style.background = '');
+                    this.style.background = selected === q.answer ? 'rgba(34,197,94,0.15)' : 'rgba(239,68,68,0.15)';
+                });
+            });
+        });
+
+        // Render fill in the blank questions
+        const fillDiv = document.getElementById('fill-blank-questions');
+        fillQuestions.forEach((q, idx) => {
+            const qDiv = document.createElement('div');
+            qDiv.className = 'quiz-question';
+            qDiv.innerHTML = `
+                <div class="question-number">Fill-in #${q.number}</div>
+                <div class="question-text">Complete with the correct word form:</div>
+                <p style="margin: 20px 0; font-size: 1.1rem; color: #2d3748;">${q.sentence}</p>
+                <div style="background: rgba(248, 250, 252, 0.9); padding: 15px; border-radius: 10px; margin: 15px 0;">
+                    <strong>Word bank:</strong> ${q.wordBank}
+                </div>
+                <button class="answer-check" id="fill-check-${idx}" style="margin-bottom:10px;">Answer Check</button>
+                <div class="fill-feedback" id="fill-feedback-${idx}" style="margin-top:10px;"></div>
+            `;
+            fillDiv.appendChild(qDiv);
+        });
+
+        // Add event for fill in the blank answer check
+        fillQuestions.forEach((q, idx) => {
+            document.getElementById(`fill-check-${idx}`).addEventListener('click', function() {
+                const input = document.getElementById(`fill${q.number}`);
+                const feedbackDiv = document.getElementById(`fill-feedback-${idx}`);
+                if (!input) return;
+                const val = input.value.trim().toLowerCase();
+                if (val === q.answer.toLowerCase()) {
+                    feedbackDiv.innerHTML = `<span style='color:green;font-weight:600;'>✔ ถูกต้อง!</span> <span style='color:#2d3748;'>${q.explanation}</span>`;
+                    input.style.background = 'rgba(34,197,94,0.15)';
+                } else {
+                    feedbackDiv.innerHTML = `<span style='color:red;font-weight:600;'>✖ ไม่ถูกต้อง</span> <span style='color:#2d3748;'>คำตอบที่ถูกต้องคือ <b>${q.answer}</b><br>${q.explanation}</span>`;
+                    input.style.background = 'rgba(239,68,68,0.15)';
+                }
+            });
+        });
+        </script>
+
+            <!-- Answer Key Section -->
+            <div class="answer-key">
+                <h3>🎯 Answer Key & Explanations</h3>
+                
+                <div class="answer">
+                    <strong>1. B) analysis</strong> - Need a noun to complete "conducted a thorough ___". "Analysis" is the noun form of "analyze."
+                </div>
+                
+                <div class="answer">
+                    <strong>2. A) economical</strong> - "Economical" means cost-effective or thrifty. "Economic" relates to the economy as a system.
+                </div>
+                
+                <div class="answer">
+                    <strong>3. B) re-</strong> - "Reconstruct" means to build again or rebuild theories with new understanding.
+                </div>
+                
+                <div class="answer">
+                    <strong>4. D) distraction</strong> - "Distraction" comes from "tract" (pull/draw), not "struct" (build). The others all relate to building/structure.
+                </div>
+                
+                <div class="answer">
+                    <strong>5. C) significance</strong> - This is the standard noun form. "Signification" exists but is less commonly used in academic writing.
+                </div>
+                
+                <div class="answer">
+                    <strong>6. B) evaluate</strong> - Need the verb form after "will." "The committee will evaluate" is correct future tense.
+                </div>
+                
+                <div class="answer">
+                    <strong>7. C) -ive</strong> - The suffix "-ive" creates adjectives (creative, objective, distinctive). Others create nouns or verbs.
+                </div>
+                
+                <div class="answer">
+                    <strong>8. C) methodically</strong> - Adverbs typically end in "-ly." "Methodically" means "in a systematic way."
+                </div>
+                
+                <div class="answer">
+                    <strong>9. B) indicate</strong> - Need the verb form. "The findings indicate" shows what the research demonstrates.
+                </div>
+                
+                <div class="answer">
+                    <strong>10. D) un-</strong> - "Un-" is the most common prefix meaning "not" (unclear, unable, unfair).
+                </div>
+
+                <h4 style="margin-top: 40px;">📝 Fill-in-the-Blank Answers:</h4>
+                
+                <div class="answer">
+                    <strong>Fill-in #1: analyze</strong> - Need the verb form after "need to." Students need to analyze their essays.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #2: response</strong> - Need a noun after "The _____ of the policy." Response is the noun form.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #3: significant</strong> - Need an adjective after "It is _____." Significant means important.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #4: establish</strong> - Need the base verb form after "will." Future tense: will establish.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #5: significant</strong> - Need an adjective to describe "increase." A significant increase.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #6: analysis</strong> - Need a noun after "The _____ of the survey." Analysis is the noun form.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #7: require</strong> - Need the base verb form after "must." Students must require = Students must meet/need.
+                </div>
+                
+                <div class="answer">
+                    <strong>Fill-in #8: methodical</strong> - Need an adjective to describe "approach." A methodical approach means systematic.
+                </div>
+
+                <h4 style="margin-top: 40px;">📊 Scoring Guide:</h4>
+                <div class="answer">
+                    <strong>17-18 correct:</strong> Excellent! You have mastered word building patterns.<br>
+                    <strong>14-16 correct:</strong> Very good! Review the areas you missed.<br>
+                    <strong>10-13 correct:</strong> Good start! Focus on suffix patterns and common prefixes.<br>
+                    <strong>0-9 correct:</strong> Keep practicing! Review the mind map and word forms table above.
+                </div>
+
+                <h4 style="margin-top: 30px;">🎓 Next Steps for Improvement:</h4>
+                <div class="answer">
+                    <strong>Study Tip 1:</strong> Create word family trees for each root word you encounter<br>
+                    <strong>Study Tip 2:</strong> Practice transforming one word into all its possible forms daily<br>
+                    <strong>Study Tip 3:</strong> Read academic texts and identify word patterns you've learned<br>
+                    <strong>Study Tip 4:</strong> Use new word forms in your own writing to reinforce learning
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-home">
+            <div class="home-navigation">
+                <a href="index.html" class="home-btn">Home</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
