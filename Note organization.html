@@ -180,6 +180,11 @@
       background: rgba(255, 252, 230, 0.9);
     }
 
+    .grammar-results.success {
+      border-left-color: #28a745;
+      background: rgba(240, 255, 240, 0.9);
+    }
+
     .grammar-error-item {
       margin-bottom: 12px;
       padding: 10px;
@@ -551,6 +556,10 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
     }
+
+    .test-btn {
+      background: linear-gradient(135deg, #ff6b6b, #ee5a52) !important;
+    }
   </style>
 </head>
 <body>
@@ -567,20 +576,15 @@
         <option value="en-US">American English</option>
         <option value="en-GB">British English</option>
       </select>
-      <button id="checkGrammarBtn" class="grammar-check-btn">Check Grammar</button>
+      <button type="button" class="grammar-check-btn" onclick="performGrammarCheck()">Check Grammar</button>
     </div>
     <div id="grammarResults" class="grammar-results" style="display: none;"></div>
     
     <!-- Quick fixes section -->
-    <div id="quickFixes" class="quick-fixes" style="display: none;">
-      <button class="quick-fix-btn" onclick="applyCommonFix('he don\\'t', 'he doesn\\'t')">He doesn't</button>
-      <button class="quick-fix-btn" onclick="applyCommonFix('she don\\'t', 'she doesn\\'t')">She doesn't</button>
-      <button class="quick-fix-btn" onclick="applyCommonFix('it don\\'t', 'it doesn\\'t')">It doesn't</button>
-      <button class="quick-fix-btn" onclick="applyCommonFix('i doesn\\'t', 'i don\\'t')">I don't</button>
-      <button class="quick-fix-btn" onclick="applyCommonFix('you doesn\\'t', 'you don\\'t')">You don't</button>
-      <button class="quick-fix-btn" onclick="applyCommonFix('they doesn\\'t', 'they don\\'t')">They don't</button>
-      <button class="quick-fix-btn" onclick="applyCommonFix('we doesn\\'t', 'we don\\'t')">We don't</button>
-      <button class="quick-fix-btn" onclick="testGrammarChecker()" style="background: linear-gradient(135deg, #ff6b6b, #ee5a52);">🧪 Test</button>
+    <div id="quickFixes" class="quick-fixes">
+      <button type="button" class="quick-fix-btn" onclick="insertTestSentence()">🧪 Test</button>
+      <button type="button" class="quick-fix-btn" onclick="fixCommonError('don\\'t', 'doesn\\'t')">Fix don't→doesn't</button>
+      <button type="button" class="quick-fix-btn" onclick="fixCommonError('has', 'have')">Fix has→have</button>
     </div>
   </div>
 
@@ -589,18 +593,18 @@
   
   <!-- Progress bar -->
   <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
+    <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
   </div>
   
   <!-- Card counter -->
   <div class="card-counter" id="cardCounter">
-    1 / 0
+    Loading...
   </div>
   
   <div class="container">
     <!-- Flashcard -->
     <div class="card-container">
-      <div class="flashcard" id="flashcard">
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
         <div class="card-front">
           <div class="card-content" id="frontContent">
             <div class="loading">กำลังโหลด...</div>
@@ -616,25 +620,26 @@
 
     <!-- Listen button above input field -->
     <div style="margin-bottom: 10px; text-align: center;">
-      <button id="listenBtn" class="btn btn-primary" style="margin-bottom: 8px; padding: 10px 24px; font-size: 1.1rem;">🔊 Listen</button>
+      <button id="listenBtn" class="btn btn-primary" style="margin-bottom: 8px; padding: 10px 24px; font-size: 1.1rem;" onclick="speakCurrentWord()">🔊 Listen</button>
     </div>
+    
     <!-- Skip to word input -->
     <div style="margin-bottom: 20px; text-align: center;">
-      <input type="text" id="skipWordInput" placeholder="พิมพ์คำศัพท์เพื่อข้ามไป..." style="padding: 10px 18px; border-radius: 25px; border: 1px solid #ccc; font-size: 1.1rem; width: 220px;">
-      <button class="btn btn-primary" id="skipWordBtn" style="margin-left: 10px; padding: 10px 24px; font-size: 1.1rem;">ข้ามไปคำนั้น</button>
+      <input type="text" id="skipWordInput" placeholder="พิมพ์คำศัพท์เพื่อข้ามไป..." style="padding: 10px 18px; border-radius: 25px; border: 1px solid #ccc; font-size: 1.1rem; width: 220px;" onkeypress="handleEnterKey(event)">
+      <button class="btn btn-primary" style="margin-left: 10px; padding: 10px 24px; font-size: 1.1rem;" onclick="skipToWord()">ข้ามไปคำนั้น</button>
     </div>
 
     <!-- Controls -->
     <div class="controls">
-      <button class="btn btn-secondary" id="prevBtn">Previous</button>
-      <button class="btn btn-primary" id="nextBtn">Next</button>
+      <button class="btn btn-secondary" onclick="previousCard()">Previous</button>
+      <button class="btn btn-primary" onclick="nextCard()">Next</button>
     </div>
   </div>
   
   <!-- Footer Instructions -->
   <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: none; z-index: 10;">
-  <div style="text-align: left; padding: 12px 24px; color: rgba(255,255,255,0.85); font-size: 0.85rem; font-family: 'Kanit', sans-serif;">
-      คลิกที่การ์ดเพื่อดูคำแปล • กด Space เพื่อพลิกการ์ด • ใช้ลูกศรซ้าย/ขวาเพื่อนำทาง
+    <div style="text-align: left; padding: 12px 24px; color: rgba(255,255,255,0.85); font-size: 0.85rem; font-family: 'Kanit', sans-serif;">
+        คลิกที่การ์ดเพื่อดูคำแปล • กด Space เพื่อพลิกการ์ด • ใช้ลูกศรซ้าย/ขวาเพื่อนำทาง
     </div>
   </footer>
 
@@ -644,81 +649,20 @@
   </div>
 
   <script>
+    // Global variables
     let flashcards = [];
-    let current = 0;
+    let currentIndex = 0;
     let isFlipped = false;
 
-    // Common grammar corrections database
-    const grammarCorrections = {
-      // Subject-verb agreement with do/does/don't/doesn't
-      "he don't": "he doesn't",
-      "she don't": "she doesn't", 
-      "it don't": "it doesn't",
-      "he do not": "he does not",
-      "she do not": "she does not",
-      "it do not": "it does not",
-      "i doesn't": "i don't",
-      "you doesn't": "you don't",
-      "we doesn't": "we don't", 
-      "they doesn't": "they don't",
-      "i does not": "i do not",
-      "you does not": "you do not",
-      "we does not": "we do not",
-      "they does not": "they do not",
-      
-      // Has/have corrections
-      "he have": "he has",
-      "she have": "she has",
-      "it have": "it has", 
-      "i has": "i have",
-      "you has": "you have",
-      "we has": "we have",
-      "they has": "they have",
-      
-      // Was/were corrections
-      "i were": "i was",
-      "he were": "he was",
-      "she were": "she was",
-      "it were": "it was",
-      "you was": "you were",
-      "we was": "we were", 
-      "they was": "they were",
-      
-      // Is/are/am corrections
-      "i is": "i am",
-      "i are": "i am",
-      "he are": "he is",
-      "she are": "she is",
-      "it are": "it is",
-      "you is": "you are",
-      "we is": "we are",
-      "they is": "they are",
-      
-      // Common article errors
-      "a apple": "an apple",
-      "a orange": "an orange",
-      "a hour": "an hour",
-      "an car": "a car",
-      "an book": "a book",
-      
-      // Common contractions
-      "dont": "don't",
-      "doesnt": "doesn't",
-      "wont": "won't",
-      "cant": "can't",
-      "shouldnt": "shouldn't",
-      "wouldnt": "wouldn't",
-      "couldnt": "couldn't",
-      "didnt": "didn't",
-      "hasnt": "hasn't",
-      "havent": "haven't",
-      "isnt": "isn't",
-      "arent": "aren't",
-      "wasnt": "wasn't",
-      "werent": "weren't"
-    };
+    // Initialize the application
+    function initializeApp() {
+      console.log('Initializing application...');
+      createParticles();
+      loadFlashcardsData();
+      setupKeyboardShortcuts();
+    }
 
-    // Create floating particles
+    // Create floating particles effect
     function createParticles() {
       const particlesContainer = document.getElementById('particles');
       for (let i = 0; i < 50; i++) {
@@ -732,326 +676,150 @@
       }
     }
 
-    // Grammar checking function
-    function checkGrammar() {
-      const textarea = document.getElementById('grammarTextarea');
-      const resultsDiv = document.getElementById('grammarResults');
-      const quickFixesDiv = document.getElementById('quickFixes');
-      const checkBtn = document.getElementById('checkGrammarBtn');
-      
-      const text = textarea.value.trim();
-      
-      if (!text) {
-        showResults('โปรดใส่ประโยคที่ต้องการตรวจสอบ', 'warning');
-        return;
-      }
-      
-      checkBtn.disabled = true;
-      checkBtn.textContent = 'กำลังตรวจสอบ...';
-      
-      setTimeout(() => {
-        const errors = findGrammarErrors(text);
+    // Load flashcards data from JSON files
+    async function loadFlashcardsData() {
+      const jsonFiles = [
+        'longman_flashcards_1_500.json',
+        'longman_flashcards_501_1000.json',
+        'longman_flashcards_1001_1500.json',
+        'longman_flashcards_1501_2000.json',
+        'longman_flashcards_2001_2500.json',
+        'longman_flashcards_2501_3000.json',
+        'longman_flashcards_3001_3135.json'
+      ];
+
+      try {
+        console.log('Loading flashcard data from JSON files...');
+        let allCards = [];
         
-        if (errors.length === 0) {
-          showResults('✅ ไม่พบข้อผิดพลาดทางไวยากรณ์!', 'success');
+        for (const fileName of jsonFiles) {
+          try {
+            const response = await fetch(fileName);
+            if (response.ok) {
+              const data = await response.json();
+              allCards = allCards.concat(data);
+              console.log(`Loaded ${data.length} cards from ${fileName}`);
+            } else {
+              console.warn(`Could not load ${fileName}: ${response.status}`);
+            }
+          } catch (fileError) {
+            console.warn(`Error loading ${fileName}:`, fileError);
+          }
+        }
+
+        if (allCards.length > 0) {
+          flashcards = allCards;
+          console.log(`Successfully loaded ${flashcards.length} total flashcards`);
+          
+          // Initialize the first card
+          updateCurrentCard();
+          updateProgress();
+          updateCounter();
         } else {
-          displayErrors(errors);
+          // Show error if no files found
+          console.error('No JSON files found or loaded successfully');
+          document.getElementById('frontContent').innerHTML = '<div style="color: red; font-size: 1.5rem;">ไม่พบไฟล์ JSON<br>กรุณาวางไฟล์ในโฟลเดอร์เดียวกัน</div>';
+          document.getElementById('cardCounter').textContent = 'Error: No data';
         }
-        
-        checkBtn.disabled = false;
-        checkBtn.textContent = 'Check Grammar';
-      }, 500);
-    }
 
-    function findGrammarErrors(text) {
-      const errors = [];
-      const lowerText = text.toLowerCase();
-      
-      // Check against common grammar corrections
-      for (const [error, correction] of Object.entries(grammarCorrections)) {
-        if (lowerText.includes(error)) {
-          const index = lowerText.indexOf(error);
-          errors.push({
-            type: 'Grammar Error',
-            message: `Found "${error}" - should be "${correction}"`,
-            context: text.substring(Math.max(0, index - 10), index + error.length + 10),
-            errorText: error,
-            suggestion: correction,
-            position: index
-          });
-        }
-      }
-      
-      // Additional pattern checks
-      checkSubjectVerbAgreement(text, errors);
-      checkArticleUsage(text, errors);
-      checkCapitalization(text, errors);
-      
-      return errors;
-    }
-
-    function checkSubjectVerbAgreement(text, errors) {
-      const patterns = [
-        { pattern: /\b(he|she|it)\s+are\b/gi, suggestion: 'is' },
-        { pattern: /\b(i|you|we|they)\s+is\b/gi, suggestion: 'are' },
-        { pattern: /\b(he|she|it)\s+have\b/gi, suggestion: 'has' },
-        { pattern: /\b(i|you|we|they)\s+has\b/gi, suggestion: 'have' }
-      ];
-      
-      patterns.forEach(({ pattern, suggestion }) => {
-        const matches = text.matchAll(pattern);
-        for (const match of matches) {
-          errors.push({
-            type: 'Subject-Verb Agreement',
-            message: `Subject-verb disagreement found`,
-            context: text.substring(Math.max(0, match.index - 10), match.index + match[0].length + 10),
-            errorText: match[0],
-            suggestion: match[1] + ' ' + suggestion,
-            position: match.index
-          });
-        }
-      });
-    }
-
-    function checkArticleUsage(text, errors) {
-      const patterns = [
-        { pattern: /\ba\s+(apple|orange|elephant|umbrella|hour)\b/gi, suggestion: 'an' },
-        { pattern: /\ban\s+(car|book|house|dog|cat)\b/gi, suggestion: 'a' }
-      ];
-      
-      patterns.forEach(({ pattern, suggestion }) => {
-        const matches = text.matchAll(pattern);
-        for (const match of matches) {
-          const word = match[1];
-          errors.push({
-            type: 'Article Usage',
-            message: `Incorrect article usage`,
-            context: text.substring(Math.max(0, match.index - 10), match.index + match[0].length + 10),
-            errorText: match[0],
-            suggestion: suggestion + ' ' + word,
-            position: match.index
-          });
-        }
-      });
-    }
-
-    function checkCapitalization(text, errors) {
-      // Check if sentence starts with lowercase
-      if (text.length > 0 && text[0] !== text[0].toUpperCase() && /[a-z]/.test(text[0])) {
-        errors.push({
-          type: 'Capitalization',
-          message: 'Sentence should start with a capital letter',
-          context: text.substring(0, 20) + '...',
-          errorText: text[0],
-          suggestion: text[0].toUpperCase(),
-          position: 0
-        });
+      } catch (error) {
+        console.error('Error in loadFlashcardsData:', error);
+        document.getElementById('frontContent').innerHTML = '<div style="color: red; font-size: 1.5rem;">เกิดข้อผิดพลาดในการโหลดข้อมูล</div>';
+        document.getElementById('cardCounter').textContent = 'Error';
       }
     }
 
-    function showResults(message, type) {
-      const resultsDiv = document.getElementById('grammarResults');
-      const quickFixesDiv = document.getElementById('quickFixes');
-      
-      resultsDiv.innerHTML = message;
-      resultsDiv.className = `grammar-results ${type}`;
-      resultsDiv.style.display = 'block';
-      
-      if (type === 'success') {
-        quickFixesDiv.style.display = 'none';
-      }
-    }
+    // Update the current flashcard display
+    function updateCurrentCard() {
+      if (flashcards.length === 0) return;
 
-    function displayErrors(errors) {
-      const resultsDiv = document.getElementById('grammarResults');
-      const quickFixesDiv = document.getElementById('quickFixes');
-      
-      let html = `<strong>พบข้อผิดพลาด ${errors.length} จุด:</strong><br><br>`;
-      
-      errors.forEach((error, index) => {
-        html += `
-          <div class="grammar-error-item">
-            <div class="grammar-error-type">${error.type}</div>
-            <div class="grammar-error-message">${error.message}</div>
-            <div class="grammar-context">
-              Context: ${error.context.replace(error.errorText, `<span class="grammar-error-text">${error.errorText}</span>`)}
-            </div>
-            <div class="grammar-suggestion">
-              💡 Suggestion: <span class="grammar-suggestion-item" onclick="applySuggestion('${error.errorText}', '${error.suggestion}')">${error.suggestion}</span>
-            </div>
-          </div>
-        `;
-      });
-      
-      resultsDiv.innerHTML = html;
-      resultsDiv.className = 'grammar-results error';
-      resultsDiv.style.display = 'block';
-      quickFixesDiv.style.display = 'flex';
-    }
-
-    function applySuggestion(errorText, suggestion) {
-      const textarea = document.getElementById('grammarTextarea');
-      const text = textarea.value;
-      const regex = new RegExp(errorText.replace(/[.*+?^${}()|[\]\\]/g, '\\    function checkSubjectVerbAgreement(text, errors) {
-      const patterns = [
-        { pattern: /\b(he|she|it)\s+are\b/gi, suggestion: 'is' },
-        { pattern: /\b(i|you|we|they)\s+is\b/gi, suggestion: 'are' },
-        { pattern: /\b(he|she|it)\s+have\b/gi, suggestion: 'has' },
-        { pattern: /\b(i|you|we|they)\s+has\b/gi, suggestion: 'have' }
-      ];
-      
-      patterns.forEach(({ pattern, suggestion }) => {
-        const matches = text.matchAll(pattern);
-        for (const match of matches) {
-          errors.push({
-            type: 'Subject-Verb Agreement',
-            message: `Subject-verb disagreement found`,
-            context: text.substring(Math.max(0, match.index - 10), match.index + match[0].length + 10),
-            errorText: match[0],
-            suggestion: match[1] + ' ' + suggestion,
-            position: match.index
-          });
-        }
-      });
-    }'), 'gi');
-      textarea.value = text.replace(regex, suggestion);
-      
-      // Re-check grammar after applying suggestion
-      setTimeout(checkGrammar, 300);
-    }
-
-    function applyCommonFix(errorPattern, correction) {
-      const textarea = document.getElementById('grammarTextarea');
-      let text = textarea.value.toLowerCase();
-      
-      // Apply the correction
-      const regex = new RegExp(errorPattern.replace(/[.*+?^${}()|[\]\\]/g, '\\    function checkSubjectVerbAgreement(text, errors) {
-      const patterns = [
-        { pattern: /\b(he|she|it)\s+are\b/gi, suggestion: 'is' },
-        { pattern: /\b(i|you|we|they)\s+is\b/gi, suggestion: 'are' },
-        { pattern: /\b(he|she|it)\s+have\b/gi, suggestion: 'has' },
-        { pattern: /\b(i|you|we|they)\s+has\b/gi, suggestion: 'have' }
-      ];
-      
-      patterns.forEach(({ pattern, suggestion }) => {
-        const matches = text.matchAll(pattern);
-        for (const match of matches) {
-          errors.push({
-            type: 'Subject-Verb Agreement',
-            message: `Subject-verb disagreement found`,
-            context: text.substring(Math.max(0, match.index - 10), match.index + match[0].length + 10),
-            errorText: match[0],
-            suggestion: match[1] + ' ' + suggestion,
-            position: match.index
-          });
-        }
-      });
-    }'), 'gi');
-      textarea.value = textarea.value.replace(regex, correction);
-      
-      // Re-check grammar after applying fix
-      setTimeout(checkGrammar, 300);
-    }
-
-    async function loadFlashcards() {
-      // Sample flashcards data for demo purposes
-      flashcards = [
-        { word: "hello", definition: "สวัสดี, ทักทาย" },
-        { word: "world", definition: "โลก, ทั่วโลก" },
-        { word: "beautiful", definition: "สวยงาม, งดงาม" },
-        { word: "important", definition: "สำคัญ, มีความหมาย" },
-        { word: "education", definition: "การศึกษา, การเรียนรู้" },
-        { word: "technology", definition: "เทคโนโลยี, วิทยาการ" },
-        { word: "development", definition: "การพัฒนา, การเจริญเติบโต" },
-        { word: "environment", definition: "สิ่งแวดล้อม, สภาพแวดล้อม" },
-        { word: "knowledge", definition: "ความรู้, ความเข้าใจ" },
-        { word: "experience", definition: "ประสบการณ์, การทดลอง" }
-      ];
-      
-      updateCard();
-      updateProgress();
-      updateCounter();
-    }
-
-    function updateCard() {
       const frontContent = document.getElementById('frontContent');
       const backContent = document.getElementById('backContent');
-      const card = document.getElementById('flashcard');
+      const flashcard = document.getElementById('flashcard');
       
       // Reset flip state
       isFlipped = false;
-      card.classList.remove('flipped');
+      flashcard.classList.remove('flipped');
       
       // Update content
-      let word = flashcards[current].word || `ข้อที่ ${current + 1}`;
-      frontContent.innerHTML = `<h2 id="word" style="margin-bottom: 16px; font-size: 2.2rem; font-weight: 600;">${word}</h2>`;
-      // Update Listen button event after card changes
-      updateListenBtn();
-      backContent.textContent = flashcards[current].definition;
+      const currentCard = flashcards[currentIndex];
+      frontContent.innerHTML = `<h2 style="margin-bottom: 16px; font-size: 2.2rem; font-weight: 600;">${currentCard.word || 'No word'}</h2>`;
+      backContent.textContent = currentCard.definition || 'No definition';
     }
 
-    // Listen button event
-    function updateListenBtn() {
-      const listenBtn = document.getElementById('listenBtn');
-      if (listenBtn) {
-        listenBtn.onclick = function() {
-          const wordText = document.getElementById('word').textContent;
-          const utter = new SpeechSynthesisUtterance(wordText);
-          utter.lang = 'en-US';
-          window.speechSynthesis.speak(utter);
-        };
-      }
+    // Navigation functions
+    function nextCard() {
+      if (flashcards.length === 0) return;
+      currentIndex = (currentIndex + 1) % flashcards.length;
+      updateCurrentCard();
+      updateProgress();
+      updateCounter();
+    }
+
+    function previousCard() {
+      if (flashcards.length === 0) return;
+      currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
+      updateCurrentCard();
+      updateProgress();
+      updateCounter();
     }
 
     function flipCard() {
-      const card = document.getElementById('flashcard');
+      const flashcard = document.getElementById('flashcard');
       isFlipped = !isFlipped;
-      
       if (isFlipped) {
-        card.classList.add('flipped');
+        flashcard.classList.add('flipped');
       } else {
-        card.classList.remove('flipped');
+        flashcard.classList.remove('flipped');
       }
     }
 
-    function nextCard() {
-      current = (current + 1) % flashcards.length;
-      updateCard();
-      updateProgress();
-      updateCounter();
-    }
-
-    function prevCard() {
-      current = (current - 1 + flashcards.length) % flashcards.length;
-      updateCard();
-      updateProgress();
-      updateCounter();
-    }
-
+    // Update progress bar
     function updateProgress() {
+      if (flashcards.length === 0) return;
       const progressBar = document.getElementById('progressBar');
-      const progress = ((current + 1) / flashcards.length) * 100;
+      const progress = ((currentIndex + 1) / flashcards.length) * 100;
       progressBar.style.width = progress + '%';
     }
 
+    // Update card counter
     function updateCounter() {
       const counter = document.getElementById('cardCounter');
-      counter.textContent = `${current + 1} / ${flashcards.length}`;
+      if (flashcards.length === 0) {
+        counter.textContent = 'Loading...';
+      } else {
+        counter.textContent = `${currentIndex + 1} / ${flashcards.length}`;
+      }
     }
 
+    // Text-to-speech function
+    function speakCurrentWord() {
+      if (flashcards.length === 0) return;
+      const currentWord = flashcards[currentIndex].word;
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(currentWord);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.8;
+        speechSynthesis.speak(utterance);
+      } else {
+        alert('Speech synthesis not supported in this browser');
+      }
+    }
+
+    // Skip to specific word
     function skipToWord() {
       const input = document.getElementById('skipWordInput');
-      const searchWord = input.value.trim().toLowerCase();
+      const searchTerm = input.value.trim().toLowerCase();
       
-      if (!searchWord) return;
+      if (!searchTerm || flashcards.length === 0) return;
       
-      const index = flashcards.findIndex(card => 
-        card.word.toLowerCase().includes(searchWord)
+      const foundIndex = flashcards.findIndex(card => 
+        card.word.toLowerCase().includes(searchTerm)
       );
       
-      if (index !== -1) {
-        current = index;
-        updateCard();
+      if (foundIndex !== -1) {
+        currentIndex = foundIndex;
+        updateCurrentCard();
         updateProgress();
         updateCounter();
         input.value = '';
@@ -1060,47 +828,227 @@
       }
     }
 
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', function() {
-      createParticles();
-      loadFlashcards();
-      
-      // Flashcard controls
-      document.getElementById('flashcard').addEventListener('click', flipCard);
-      document.getElementById('nextBtn').addEventListener('click', nextCard);
-      document.getElementById('prevBtn').addEventListener('click', prevCard);
-      document.getElementById('skipWordBtn').addEventListener('click', skipToWord);
-      
-      // Skip word input enter key
-      document.getElementById('skipWordInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          skipToWord();
+    // Handle Enter key for skip input
+    function handleEnterKey(event) {
+      if (event.key === 'Enter') {
+        skipToWord();
+      }
+    }
+
+    // Setup keyboard shortcuts
+    function setupKeyboardShortcuts() {
+      document.addEventListener('keydown', function(event) {
+        // Don't trigger shortcuts when typing in input fields
+        if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+          return;
         }
-      });
-      
-      // Grammar textarea enter key for quick check
-      document.getElementById('grammarTextarea').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter' && e.ctrlKey) {
-          checkGrammar();
-        }
-      });
-      
-      // Keyboard shortcuts
-      document.addEventListener('keydown', function(e) {
-        switch(e.code) {
+
+        switch(event.code) {
           case 'Space':
-            e.preventDefault();
+            event.preventDefault();
             flipCard();
             break;
           case 'ArrowRight':
             nextCard();
             break;
           case 'ArrowLeft':
-            prevCard();
+            previousCard();
             break;
         }
       });
+    }
+
+    // Grammar Checker Functions
+    async function performGrammarCheck() {
+      const textarea = document.getElementById('grammarTextarea');
+      const resultsDiv = document.getElementById('grammarResults');
+      const checkBtn = document.querySelector('.grammar-check-btn');
+      const languageSelect = document.getElementById('languageSelect');
+      
+      const text = textarea.value.trim();
+      
+      if (!text) {
+        showGrammarResults('⚠️ โปรดใส่ประโยคที่ต้องการตรวจสอบ', 'warning');
+        return;
+      }
+      
+      // Disable button and show loading
+      checkBtn.disabled = true;
+      checkBtn.textContent = 'กำลังตรวจสอบ...';
+      
+      try {
+        console.log('Checking grammar for:', text);
+        
+        // Try LanguageTool API first
+        const response = await fetch('https://api.languagetool.org/v2/check', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            'text': text,
+            'language': languageSelect.value || 'en-US'
+          })
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          console.log('LanguageTool response:', data);
+          
+          if (data.matches && data.matches.length > 0) {
+            displayGrammarErrors(data.matches, text);
+          } else {
+            showGrammarResults('✅ ไม่พบข้อผิดพลาดทางไวยากรณ์!', 'success');
+          }
+        } else {
+          throw new Error('API request failed');
+        }
+        
+      } catch (error) {
+        console.log('API failed, using local grammar check:', error);
+        // Fallback to local grammar checking
+        const localErrors = checkLocalGrammar(text);
+        if (localErrors.length > 0) {
+          displayLocalErrors(localErrors, text);
+        } else {
+          showGrammarResults('✅ ไม่พบข้อผิดพลาดทางไวยากรณ์! (ตรวจสอบแบบออฟไลน์)', 'success');
+        }
+      }
+      
+      // Re-enable button
+      checkBtn.disabled = false;
+      checkBtn.textContent = 'Check Grammar';
+    }
+
+    function displayGrammarErrors(matches, originalText) {
+      let html = `<strong>🔍 พบข้อผิดพลาด ${matches.length} จุด:</strong><br><br>`;
+      
+      matches.forEach((match, index) => {
+        const errorText = originalText.substring(match.offset, match.offset + match.length);
+        const beforeText = originalText.substring(Math.max(0, match.offset - 15), match.offset);
+        const afterText = originalText.substring(match.offset + match.length, Math.min(originalText.length, match.offset + match.length + 15));
+        
+        html += `
+          <div class="grammar-error-item">
+            <div class="grammar-error-type">${match.rule.category.name || 'Grammar Error'}</div>
+            <div class="grammar-error-message">${match.message}</div>
+            <div class="grammar-context">
+              Context: ${beforeText}<span class="grammar-error-text">${errorText}</span>${afterText}
+            </div>
+        `;
+        
+        if (match.replacements && match.replacements.length > 0) {
+          html += '<div class="grammar-suggestion">💡 Suggestions: ';
+          match.replacements.slice(0, 3).forEach(replacement => {
+            html += `<span class="grammar-suggestion-item" onclick="applySuggestion('${errorText.replace(/'/g, "\\'")}', '${replacement.value.replace(/'/g, "\\'")}')">${replacement.value}</span> `;
+          });
+          html += '</div>';
+        }
+        
+        html += '</div>';
+      });
+      
+      showGrammarResults(html, 'error');
+    }
+
+    function checkLocalGrammar(text) {
+      const errors = [];
+      const lowerText = text.toLowerCase();
+      
+      // Common grammar patterns
+      const grammarRules = [
+        { pattern: /\b(he|she|it)\s+don't\b/gi, correction: "doesn't", message: "Subject-verb disagreement" },
+        { pattern: /\b(i|you|we|they)\s+doesn't\b/gi, correction: "don't", message: "Subject-verb disagreement" },
+        { pattern: /\b(he|she|it)\s+have\b/gi, correction: "has", message: "Subject-verb disagreement" },
+        { pattern: /\b(i|you|we|they)\s+has\b/gi, correction: "have", message: "Subject-verb disagreement" },
+        { pattern: /\ba\s+(apple|orange|elephant|umbrella|hour)\b/gi, correction: "an", message: "Article error" },
+        { pattern: /\ban\s+(car|book|house|dog|cat)\b/gi, correction: "a", message: "Article error" }
+      ];
+      
+      grammarRules.forEach(rule => {
+        const matches = text.matchAll(rule.pattern);
+        for (const match of matches) {
+          errors.push({
+            type: rule.message,
+            original: match[0],
+            suggestion: rule.correction,
+            position: match.index,
+            context: text.substring(Math.max(0, match.index - 15), match.index + match[0].length + 15)
+          });
+        }
+      });
+      
+      return errors;
+    }
+
+    function displayLocalErrors(errors, originalText) {
+      let html = `<strong>🔍 พบข้อผิดพลาด ${errors.length} จุด:</strong><br><br>`;
+      
+      errors.forEach(error => {
+        html += `
+          <div class="grammar-error-item">
+            <div class="grammar-error-type">${error.type}</div>
+            <div class="grammar-error-message">Found: "${error.original}"</div>
+            <div class="grammar-context">Context: ${error.context.replace(error.original, `<span class="grammar-error-text">${error.original}</span>`)}</div>
+            <div class="grammar-suggestion">
+              💡 Suggestion: <span class="grammar-suggestion-item" onclick="applySuggestion('${error.original.replace(/'/g, "\\'")}', '${error.suggestion.replace(/'/g, "\\'")}')">${error.suggestion}</span>
+            </div>
+          </div>
+        `;
+      });
+      
+      showGrammarResults(html, 'error');
+    }
+
+    function showGrammarResults(content, type) {
+      const resultsDiv = document.getElementById('grammarResults');
+      resultsDiv.innerHTML = content;
+      resultsDiv.className = `grammar-results ${type}`;
+      resultsDiv.style.display = 'block';
+    }
+
+    function applySuggestion(original, suggestion) {
+      const textarea = document.getElementById('grammarTextarea');
+      const text = textarea.value;
+      const newText = text.replace(original, suggestion);
+      textarea.value = newText;
+      
+      // Re-check grammar after applying suggestion
+      setTimeout(performGrammarCheck, 500);
+    }
+
+    // Quick fix functions
+    function insertTestSentence() {
+      const textarea = document.getElementById('grammarTextarea');
+      textarea.value = "He don't like coffee and I has a apple. She are very beautiful.";
+      performGrammarCheck();
+    }
+
+    function fixCommonError(find, replace) {
+      const textarea = document.getElementById('grammarTextarea');
+      const text = textarea.value;
+      const regex = new RegExp(`\\b${find}\\b`, 'gi');
+      textarea.value = text.replace(regex, replace);
+      setTimeout(performGrammarCheck, 300);
+    }
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, initializing app...');
+      initializeApp();
     });
+
+    // Make functions globally available for onclick handlers
+    window.performGrammarCheck = performGrammarCheck;
+    window.insertTestSentence = insertTestSentence;
+    window.fixCommonError = fixCommonError;
+    window.applySuggestion = applySuggestion;
+    window.flipCard = flipCard;
+    window.nextCard = nextCard;
+    window.previousCard = previousCard;
+    window.skipToWord = skipToWord;
+    window.handleEnterKey = handleEnterKey;
+    window.speakCurrentWord = speakCurrentWord;
   </script>
 </body>
 </html>
