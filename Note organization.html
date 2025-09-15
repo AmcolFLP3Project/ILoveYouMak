@@ -450,35 +450,40 @@
     
     /* Responsive design */
     @media (max-width: 768px) {
-      .grammar-panel {
-        display: none;
+        .grammar-panel {
+          display: none;
+        }
+
+        .container {
+          margin-left: 15px;   /* ขยับการ์ดไปทางขวานิดนึง */
+          margin-right: 15px;  /* กันไม่ให้ติดขอบขวา */
+        }
+
+        .card-container {
+          width: 90%;   /* กว้างขึ้นเล็กน้อย */
+          height: 60%;  /* สูงลดลงให้พอดีหน้าจอ */
+        }
+
+        .card-front, .card-back {
+          padding: 25px;
+        }
+
+        .btn {
+          padding: 15px 30px;
+          font-size: 1.1rem;
+        }
+
+        .card-counter {
+          right: 20px;
+          padding: 12px 20px;
+          font-size: 1rem;
+        }
+
+        .progress-container {
+          width: 90%;
+          top: 20px;
+        }
       }
-      
-      .card-container {
-        width: 85%;
-        height: 60%;
-      }
-      
-      .card-front, .card-back {
-        padding: 25px;
-      }
-      
-      .btn {
-        padding: 15px 30px;
-        font-size: 1.1rem;
-      }
-      
-      .card-counter {
-        right: 20px;
-        padding: 12px 20px;
-        font-size: 1rem;
-      }
-      
-      .progress-container {
-        width: 90%;
-        top: 20px;
-      }
-    }
 
     @media (max-width: 1200px) {
       .grammar-panel {
