@@ -450,29 +450,35 @@
     
     /* Responsive design */
     @media (max-width: 768px) {
-          .grammar-panel {
-            position: fixed;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 100vw;
-            max-width: 100vw;
-            margin: 0;
-            z-index: 100;
-            border-radius: 20px 20px 0 0;
-            box-shadow: 0 -2px 20px rgba(0,0,0,0.12);
-          }
-
-        .container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .card-container {
-          width: 95%;
-          margin-bottom: 20px;
-        }
+      .grammar-panel {
+        display: none;
       }
+      
+      .card-container {
+        width: 95%;
+        height: 60%;
+      }
+      
+      .card-front, .card-back {
+        padding: 25px;
+      }
+      
+      .btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+      }
+      
+      .card-counter {
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+      
+      .progress-container {
+        width: 90%;
+        top: 20px;
+      }
+    }
 
     @media (max-width: 1200px) {
       .grammar-panel {
